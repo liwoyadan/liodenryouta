@@ -1,0 +1,1080 @@
+/** CUSTOM FOR #370909 by Ryouta#276513 **/
+/* FONT IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Yantramanav:wght@400;700&display=swap");
+/* VARIABLES */
+/* LAYOUT */
+body {
+  background: #a19183 url("https://i.imgur.com/VlSvx1C.jpg") no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #272020;
+  font-family: "Yantramanav", sans-serif;
+  font-size: 1.65rem;
+  overflow-x: hidden;
+}
+
+/* SELECTION */
+::-moz-selection {
+  background: #a19183;
+  color: #d8d1cc;
+}
+::selection {
+  background: #a19183;
+  color: #d8d1cc;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #897768;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6c5e52;
+}
+
+/** MAIN CONTENT **/
+.topbar {
+  background-color: #45382E;
+  border: none;
+  border-top: none;
+  border-bottom: 1px solid #a19183;
+  color: rgba(252, 249, 244, 0.55);
+  font-size: 90%;
+}
+.topbar .welcomeback > a, .topbar .toplinks > li > a {
+  color: #e0c9b9 !important;
+}
+.topbar .welcomeback > a:hover, .topbar .toplinks > li > a:hover {
+  color: #f0e4dc !important;
+}
+
+.navbar {
+  background-color: rgba(69, 56, 46, 0.75);
+  border: 0;
+  min-height: 0;
+  /* LOGO */
+}
+.navbar .navbar-brand > img {
+  -webkit-filter: contrast(1.15) saturate(0.4) sepia(0.4);
+  filter: contrast(1.15) saturate(0.4) sepia(0.4);
+}
+.navbar li {
+  background-color: transparent;
+  position: relative;
+}
+.navbar li::before {
+  content: "";
+  background-color: #45382E;
+  height: 0%;
+  width: 100%;
+  -webkit-transition: height 350ms ease;
+  -o-transition: height 350ms ease;
+  transition: height 350ms ease;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.navbar li:hover::before {
+  height: 100%;
+}
+.navbar li a {
+  color: #cdc4bd !important;
+  font-family: "Unna", serif;
+  -webkit-transition: color 350ms ease;
+  -o-transition: color 350ms ease;
+  transition: color 350ms ease;
+}
+.navbar li a:hover {
+  background-color: transparent !important;
+  color: #a19183 !important;
+}
+.navbar-toggle {
+  border-color: #272020 !important;
+}
+.navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus {
+  background: #7b6b5d !important;
+}
+.navbar .navbar-collapse {
+  border-color: #a19183;
+}
+@media (min-width: 769px) {
+  .navbar.navbar-default::after {
+    content: "";
+    -webkit-animation: float 4000ms ease-in-out infinite;
+    animation: float 4000ms ease-in-out infinite;
+    background-image: url("https://i.imgur.com/BtR1VHG.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    right: -10rem;
+    top: -7.5rem;
+    z-index: 5;
+  }
+}
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translate(0, 2rem) rotate(3deg);
+    transform: translate(0, 2rem) rotate(3deg);
+  }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+@keyframes float {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translate(0, 2rem) rotate(3deg);
+    transform: translate(0, 2rem) rotate(3deg);
+  }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* RIGHT COLUMN (and overall container) */
+.main {
+  background-color: rgba(161, 145, 131, 0.75);
+  border-left: 3px double rgba(69, 56, 46, 0.55);
+  border-right: 3px double rgba(69, 56, 46, 0.55);
+  -webkit-box-shadow: rgba(69, 56, 46, 0.75) 0px 20px 40px;
+  box-shadow: rgba(69, 56, 46, 0.75) 0px 20px 40px;
+}
+
+/* LEFT COLUMN */
+.col-md-9 {
+  background-color: rgba(123, 107, 93, 0.75);
+}
+
+/* HEADINGS */
+h1 {
+  color: #fcf9f4;
+  font-family: "Crimson Text", serif;
+  font-size: 4rem;
+  text-align: center;
+}
+h1 small {
+  color: rgba(252, 249, 244, 0.75);
+}
+
+h2 {
+  color: #fcf9f4;
+  font-family: "Crimson Text", serif;
+}
+
+h3 {
+  color: #fcf9f4 !important;
+  font-family: "Unna", serif;
+}
+
+h4 {
+  color: #fcf9f4 !important;
+  font-family: "Unna", serif;
+}
+
+/* LINKS */
+a, a:link, a:visited {
+  color: #e0c9b9 !important;
+}
+a:hover, a:link:hover, a:visited:hover {
+  color: #f0e4dc !important;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+  background-color: #6c5e52;
+  letter-spacing: 1px;
+}
+.breadcrumb .active {
+  color: rgba(252, 249, 244, 0.75);
+}
+
+/* ALERTS */
+.alert.alert-success {
+  background-color: #9b9e72;
+  border: 0;
+  border-left: 5px solid #b0b390;
+  border-radius: 0;
+  color: #e6e7dc;
+}
+.alert.alert-success a {
+  color: #fcf9f4 !important;
+  font-weight: bold;
+}
+.alert.alert-success a:hover {
+  color: #c6c8ae !important;
+}
+.alert.alert-warning {
+  background-color: #bd9259;
+  border: 0;
+  border-left: 5px solid #ccaa7d;
+  border-radius: 0;
+  color: #f0e6d9;
+}
+.alert.alert-warning a {
+  color: #fcf9f4 !important;
+  font-weight: bold;
+}
+.alert.alert-warning a:hover {
+  color: #dac2a2 !important;
+}
+.alert.alert-danger {
+  background-color: #a15c4f;
+  border: 0;
+  border-left: 5px solid #b7786c;
+  border-radius: 0;
+  color: #e1c7c2;
+}
+.alert.alert-danger a {
+  color: #fcf9f4 !important;
+  font-weight: bold;
+}
+.alert.alert-danger a:hover {
+  color: #c8978e !important;
+}
+
+/* INPUT BUTTONS */
+input[type=submit], input[name=togglechat], button[type=submit], #btnChatSend, .button.gold {
+  background: #7b6b5d !important;
+  border: 1px solid rgba(39, 32, 32, 0.55) !important;
+  border-radius: 5px;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  color: #272020 !important;
+  text-shadow: none !important;
+  -webkit-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+input[type=submit]:hover, input[name=togglechat]:hover, button[type=submit]:hover, #btnChatSend:hover, .button.gold:hover {
+  background: #6c5e52;
+  border: 1px solid rgba(39, 32, 32, 0.75);
+  border-radius: 5px;
+  color: #cdc4bd;
+  text-shadow: none;
+}
+
+/* SELECT DROPDOWNS */
+select {
+  background-color: #c2a897;
+  border: 1px solid rgba(39, 32, 32, 0.55);
+  color: #272020 !important;
+}
+select option {
+  color: #45382E;
+}
+
+/** RIGHT COLUMN CONTENT **/
+/* ENERGY BARS, ACHIEVEMENTS, & BOOKMARKS */
+.panel {
+  background-color: #897768 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-left: 3px solid #c2a897 !important;
+  border-right: 3px solid #c2a897 !important;
+  border-radius: 0;
+  color: #272020 !important;
+}
+
+/* STAT BARS */
+.progress {
+  background: #c2a897;
+}
+.progress .progress-bar {
+  /* IMPRESSION */
+  background: #7c898b;
+  /* ENERGY */
+  /* HUNGER */
+  /* EXP */
+}
+.progress .progress-bar.progress-bar-warning {
+  background: #bd9259;
+}
+.progress .progress-bar.progress-bar-danger {
+  background: #a15c4f;
+}
+.progress .progress-bar.progress-bar-success {
+  background: #9b9e72;
+}
+.progress div {
+  border-bottom: 3px solid rgba(69, 56, 46, 0.25);
+  color: #fcf9f4;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* CHATBOX */
+.nolayout body {
+  background-color: transparent !important;
+}
+
+.s-chat-message {
+  font-size: 1.1em;
+}
+.s-chat-message:nth-child(even) {
+  background: #a19183;
+  border: 0;
+  border-left: 6px solid transparent;
+}
+.s-chat-message:nth-child(even) a {
+  color: #e0c9b9 !important;
+}
+.s-chat-message:nth-child(even) a:hover {
+  color: #cdc4bd !important;
+}
+.s-chat-message:nth-child(odd) {
+  background: #c2a897;
+  border: 0;
+  border-left: 6px solid transparent;
+}
+.s-chat-message:nth-child(odd) a {
+  color: #645142 !important;
+}
+.s-chat-message:nth-child(odd) a:hover {
+  color: #826a57 !important;
+}
+.s-chat-message__pinned {
+  background: #7b6b5d !important;
+  color: rgba(252, 249, 244, 0.75) !important;
+}
+.s-chat-message__pinned a {
+  color: #c2b8af !important;
+}
+.s-chat-message__mod {
+  background: #9b9e72 !important;
+  border: 0;
+  border-left: 6px solid transparent;
+  color: #e6e7dc;
+}
+.s-chat-message_timestamp {
+  color: rgba(252, 249, 244, 0.45);
+}
+.s-chat-message_claim {
+  background-color: #d5c3b7;
+  border-bottom: 0;
+  color: #272020;
+}
+.s-chat-message.hasContext {
+  background-color: #a19183 !important;
+  border-left-color: #968474 !important;
+}
+
+#chatMessagePinned.s-chat-message__pinned {
+  border-bottom-color: #5e5147 !important;
+}
+
+#modalClaimList {
+  background-color: #a19183;
+  border: 0;
+}
+#modalClaimList h3 {
+  background-color: #968474;
+}
+
+#label_currentChannel, #fraChatChannelMenu {
+  background-color: #c2a897 !important;
+  border: 1px solid rgba(39, 32, 32, 0.35) !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#label_currentChannel .channelSwitcher, #fraChatChannelMenu .channelSwitcher {
+  color: #272020 !important;
+}
+#label_currentChannel .channelSwitcher:hover, #fraChatChannelMenu .channelSwitcher:hover {
+  background-color: #af8d77 !important;
+}
+#label_currentChannel .channelSwitcher.active, #fraChatChannelMenu .channelSwitcher.active {
+  background-color: #c2a897 !important;
+}
+
+#fraChatSettings, #btnLoadNewMessages, .s-chat-message_menu {
+  -webkit-filter: opacity(0.65);
+  filter: opacity(0.65);
+}
+#fraChatSettings:hover, #btnLoadNewMessages:hover, .s-chat-message_menu:hover {
+  -webkit-filter: opacity(0.85);
+  filter: opacity(0.85);
+}
+
+#txtChatContainer #lblCharacterCounter {
+  color: #272020;
+}
+
+#chatMessageContainer {
+  border: 1px solid rgba(39, 32, 32, 0.35);
+}
+
+#txtChatInput {
+  background: #c2a897;
+  border: 1px solid rgba(39, 32, 32, 0.35) !important;
+  color: #272020;
+}
+
+input:focus-visible, textarea:focus-visible {
+  outline: 1px solid #272020;
+}
+
+/** PROFILE/LEFT COLUMN CONTENT **/
+/* CUSTOM BOX */
+.vulturebg {
+  background: transparent url("https://i.imgur.com/WeEqYym.png") no-repeat center bottom;
+  height: 350px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.box {
+  background-color: rgba(69, 56, 46, 0.85);
+  border: 3px double #c2a897;
+  color: #c2a897;
+  overflow: auto;
+  padding: 0.75rem;
+  position: relative;
+  height: 200px;
+  width: 75%;
+}
+
+/* PRIDE INFOBOX */
+#about {
+  background: #a19183;
+  border: 0;
+  border-left: 5px solid #c2a897;
+}
+#about .top.center {
+  background-color: #645142;
+  border: 0;
+  color: #272020;
+  font-family: "Crimson Text", serif;
+  letter-spacing: 1px;
+}
+#about .top.center a {
+  color: #c2a897 !important;
+  -webkit-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+#about .top.center a:hover {
+  color: #45382E !important;
+  letter-spacing: 2px;
+}
+#about tr.right {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  /* i probably could've done this with :has() but whatever i wrote it with :not() and it works */
+}
+#about tr.right::before {
+  content: "";
+  background-image: url("https://i.imgur.com/BMphLY1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+  pointer-events: none;
+  position: absolute;
+  top: -4.15rem;
+  right: 0;
+  z-index: 3;
+}
+@media (max-width: 768px) {
+  #about tr.right::before {
+    height: 150px;
+    width: 150px;
+  }
+}
+#about tr.right td:has(#lion_image) {
+  width: unset !important;
+}
+#about #lion_image {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(194, 168, 151, 0.35)), to(#d5c3b7));
+  background: -o-linear-gradient(top, rgba(194, 168, 151, 0.35) 0%, #d5c3b7 100%);
+  background: linear-gradient(180deg, rgba(194, 168, 151, 0.35) 0%, #d5c3b7 100%);
+  -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+  width: 200px;
+}
+#about #lion_image:hover {
+  -webkit-filter: none;
+  filter: none;
+}
+#about #lion_image div {
+  -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+  height: 195px !important;
+  width: 195px !important;
+  margin: auto;
+}
+#about .inner-table.auto .left {
+  background-color: rgba(69, 56, 46, 0.55);
+  border-radius: 0;
+  border-left: 3px solid #c2a897;
+  color: #c2a897;
+  font-family: "Unna", serif;
+  text-align: right;
+}
+#about .inner-table.auto .left b {
+  font-weight: 400;
+}
+#about .inner-table.auto .right {
+  background-color: #897768;
+  color: #272020;
+  border-radius: 0;
+}
+#about .inner-table.auto .right a {
+  color: #e0c9b9 !important;
+}
+#about .inner-table.auto .right a:hover {
+  color: #f0e4dc !important;
+}
+#about .bottom {
+  background-color: #645142;
+}
+#about .bottom a {
+  color: #e0c9b9 !important;
+  font-family: "Unna", serif;
+  letter-spacing: 1px;
+  text-decoration: none;
+  -webkit-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+#about .bottom a:hover {
+  letter-spacing: 2px;
+}
+
+/* PLAYER INFOBOX */
+#player {
+  background-color: #a19183;
+  border: 0 !important;
+  border-left: 5px solid #c2a897 !important;
+  border-collapse: separate;
+  position: relative;
+}
+#player::before {
+  content: "";
+  background-image: url("https://i.imgur.com/Be4l2Fe.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 125px;
+  width: 125px;
+  position: absolute;
+  bottom: -0.5rem;
+  left: -3rem;
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  #player::before {
+    height: 100px;
+    width: 100px;
+  }
+}
+#player tr.right {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+#player .top {
+  background-color: #645142;
+  color: #272020;
+  font-size: 1.05em;
+}
+#player .top .floatright {
+  color: #c2a897;
+}
+#player div.center.xlarge {
+  color: #fcf9f4;
+  font-family: "Crimson Text", serif;
+  font-size: 1.35em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+#player .inner-table.auto .left {
+  background: rgba(69, 56, 46, 0.55);
+  border-radius: 0;
+  border-left: 3px solid #c2a897;
+  color: #c2a897;
+  font-family: "Unna", serif;
+}
+#player .inner-table.auto .left b {
+  font-weight: 400;
+}
+#player .inner-table.auto .right {
+  background: #897768;
+  border-radius: 0;
+  color: #272020;
+}
+#player p.center.xlarge {
+  color: #272020;
+}
+#player p.center.xlarge a {
+  color: #645142 !important;
+}
+#player p.center.xlarge a:hover {
+  color: #45382E !important;
+}
+#player .center.auto > img {
+  border: 0;
+}
+#player .right img {
+  border: 3px inset #d5c3b7;
+}
+#player td.right {
+  width: unset !important;
+}
+
+/* CAVES & MOUNDS */
+.cave-grid, .mound-grid {
+  background-color: #645142;
+  border: 0;
+  border-left: 3px solid #c2a897;
+  border-right: 3px solid #c2a897;
+  border-radius: 0;
+  color: #272020;
+  font-family: "Unna", serif;
+  -webkit-transition: background-color 350ms ease;
+  -o-transition: background-color 350ms ease;
+  transition: background-color 350ms ease;
+}
+.cave-grid:hover, .mound-grid:hover {
+  background-color: #544438;
+}
+.cave-grid img[src$="unsortedlionsbanner.png"], .mound-grid img[src$="unsortedlionsbanner.png"] {
+  content: url("https://i.imgur.com/vESGCHq.png") !important;
+}
+.cave-grid img[src$="nestingbanner.png"], .mound-grid img[src$="nestingbanner.png"] {
+  content: url("https://i.imgur.com/QsTPyJp.png") !important;
+}
+.cave-grid img[src$="prideoverviewbanner.png"], .mound-grid img[src$="prideoverviewbanner.png"] {
+  content: url("https://i.imgur.com/YKT55Q0.png") !important;
+}
+.cave-grid img[src$="cavedefault.jpg"], .mound-grid img[src$="cavedefault.jpg"] {
+  content: url("https://i.imgur.com/tm96utX.png") !important;
+}
+.cave-grid img[src$="caveunused.jpg"], .mound-grid img[src$="caveunused.jpg"] {
+  content: url("https://i.imgur.com/tm96utX.png") !important;
+  -webkit-filter: saturate(0.15);
+  filter: saturate(0.15);
+}
+
+.mound-grid {
+  border-left: 1px solid #c2a897;
+  border-right: 1px solid #c2a897;
+}
+
+/* TRADITIONAL CAVE DISPLAY */
+#pride {
+  background-color: #a19183;
+  border-left: 5px solid #c2a897;
+  border-right: 0;
+  /* LV / Stats / Name Row */
+}
+#pride th {
+  background-color: #45382E;
+}
+#pride th a {
+  color: #e0c9b9 !important;
+  font-family: "Unna", serif;
+}
+#pride .left.b {
+  background-color: #645142;
+  color: #d8d1cc;
+}
+#pride .right_odd {
+  background-color: #897768;
+}
+#pride .bottom {
+  background-color: #645142;
+}
+
+/* SPARRING */
+#sparring {
+  border: 0;
+  border-left: 5px solid #c2a897;
+}
+#sparring tr > th {
+  background-color: #645142;
+  color: #272020;
+  font-family: "Unna", serif;
+}
+#sparring tr {
+  background-color: #897768;
+  color: #272020;
+}
+#sparring .right_odd {
+  background-color: #a19183;
+  color: #272020;
+}
+#sparring .right_odd .xsmall {
+  font-size: 0.9em;
+}
+
+/* FEED ALL, PLAY ALL */
+.feature {
+  background-color: #645142 !important;
+  color: #272020;
+  border: 0 !important;
+  border-left: 3px solid #c2a897 !important;
+  border-right: 3px solid #c2a897 !important;
+  border-radius: 0 !important;
+}
+.feature h3 {
+  color: #e0c9b9 !important;
+}
+.feature .xsmall {
+  font-size: 0.9em;
+}
+
+/* DYNASTY ETC BUTTONS */
+.dynastylist {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.dynastylist .left {
+  background-color: #645142;
+  border: 0;
+  border-left: 1px solid #c2a897;
+  border-right: 1px solid #c2a897;
+  border-radius: 0;
+  -webkit-transition: background-color 350ms ease;
+  -o-transition: background-color 350ms ease;
+  transition: background-color 350ms ease;
+}
+.dynastylist .left:hover {
+  background-color: #544438;
+}
+.dynastylist .left h3 {
+  color: #e0c9b9 !important;
+  font-family: "Crimson Text", serif !important;
+}
+
+/* THINNER BUTTONS */
+.col-md-3:not(.dynastylist) .left {
+  background-color: #45382E;
+  border: 0;
+  border-left: 1px solid #c2a897;
+  border-right: 1px solid #c2a897;
+  border-radius: 0;
+  color: #c2a897;
+  font-family: "Unna", serif;
+  -webkit-transition: background-color 350ms ease;
+  -o-transition: background-color 350ms ease;
+  transition: background-color 350ms ease;
+}
+.col-md-3:not(.dynastylist) .left:hover {
+  background-color: #544438;
+}
+
+/* ATTACK THIS LION */
+#attack {
+  background-color: #a19183;
+  border: 0;
+  border-left: 5px solid #c2a897;
+}
+#attack th {
+  background-color: #645142 !important;
+  border: 0;
+  color: #272020;
+  font-family: "Unna", serif;
+}
+#attack .bottom {
+  background-color: #645142;
+}
+#attack .bottom a {
+  color: #c2a897 !important;
+  text-decoration: none;
+}
+
+/* ALLIES & CLANS */
+#allies, #clans {
+  background-color: #a19183;
+  border: 0;
+  border-left: 5px solid #c2a897;
+}
+#allies .top, #clans .top {
+  background-color: #645142;
+  border: 0;
+  color: #272020;
+  font-family: "Unna", serif;
+}
+#allies .left, #clans .left {
+  background-color: #45382E;
+  height: 3px !important;
+}
+#allies .bottom, #clans .bottom {
+  background-color: #645142;
+}
+#allies .bottom a, #clans .bottom a {
+  color: #c2a897 !important;
+  text-decoration: none;
+}
+
+#clans {
+  position: relative;
+}
+#clans::after {
+  content: "";
+  background-image: url("https://i.imgur.com/fayJggH.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 150px;
+  width: 200px;
+  position: absolute;
+  bottom: -3rem;
+  right: -8rem;
+}
+@media (max-width: 992px) {
+  #clans::after {
+    height: 100px;
+    width: 150px;
+    bottom: -1rem;
+    right: -4rem;
+  }
+}
+@media (max-width: 768px) {
+  #clans::after {
+    height: 100px;
+    width: 150px;
+    bottom: -1rem;
+    right: 0;
+  }
+}
+
+/* YOUR DETAILS */
+.table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) {
+  background-color: #a19183;
+  border: 0;
+  border-left: 5px solid #c2a897;
+}
+.table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) th, .table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) .top {
+  background-color: #645142;
+  border: 0 !important;
+  color: #272020;
+  font-family: "Unna", serif;
+}
+.table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) .left {
+  background-color: rgba(69, 56, 46, 0.55);
+  border-right: 1px dotted #c2a897;
+  color: #c2a897;
+  text-align: right;
+}
+.table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) .left a {
+  background-color: transparent;
+  color: #e0c9b9 !important;
+}
+.table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) .right {
+  background-color: transparent;
+}
+.table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) .right input, .table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) .right textarea {
+  background-color: #c2a897;
+  border: 1px solid rgba(39, 32, 32, 0.55);
+  color: #272020;
+}
+.table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) .bottom {
+  background-color: #645142;
+}
+
+#editdetailspanel tr:not(:last-child, :nth-child(7)) > .left.b {
+  border-bottom: 1px dotted #c2a897;
+}
+
+/* ACCOUNT OPTIONS */
+#accountoptionspanel .item {
+  background-color: #897768;
+  border: 1px solid rgba(39, 32, 32, 0.35);
+}
+#accountoptionspanel .item-header {
+  background-color: rgba(69, 56, 46, 0.55);
+  color: #c2a897;
+}
+
+.slider {
+  background-color: #c2a897 !important;
+}
+.slider:before {
+  background-color: #fcf9f4 !important;
+}
+
+input:checked + .slider {
+  background-color: #9b9e72 !important;
+}
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #9b9e72 !important;
+  box-shadow: 0 0 1px #9b9e72 !important;
+}
+
+/* FOOTER */
+.footer {
+  color: #fcf9f4;
+  text-shadow: 1px 1px 0px rgba(94, 81, 71, 0.75), 1px -1px 0px rgba(94, 81, 71, 0.75), -1px 1px 0px rgba(94, 81, 71, 0.75), -1px -1px 0px rgba(94, 81, 71, 0.75), 1px 0px 0px rgba(94, 81, 71, 0.75), 0px 1px 0px rgba(94, 81, 71, 0.75), -1px 0px 0px rgba(94, 81, 71, 0.75), 0px -1px 0px rgba(94, 81, 71, 0.75);
+}
+.footer a {
+  border-bottom: 0 !important;
+  color: #261f1a !important;
+  text-shadow: none;
+}
+.footer a:hover {
+  color: #45382E !important;
+}
+
+.clear.visible-xs.visible-sm {
+  border-bottom: 2px solid #c2a897 !important;
+}
+
+/** DENS **/
+/* Top lion/cave image */
+.featured-lion {
+  background-color: #45382E;
+  color: #fcf9f4;
+  margin-bottom: 2rem;
+  /* Featured lion text */
+}
+.featured-lion div {
+  height: 500px !important;
+}
+@media (max-width: 670px) {
+  .featured-lion div {
+    height: 440px !important;
+  }
+}
+.featured-lion div::before {
+  content: "";
+  background-image: url("https://i.imgur.com/WeEqYym.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.featured-lion div img[src*="cave/default.png"] {
+  z-index: 1;
+}
+.featured-lion div img[src*="dynamic/lion"] {
+  z-index: 3;
+}
+.featured-lion .center {
+  font-family: "Unna", serif;
+}
+.featured-lion .center a {
+  color: #c2a897 !important;
+  -webkit-transition: letter-spacing 350ms ease;
+  -o-transition: letter-spacing 350ms ease;
+  transition: letter-spacing 350ms ease;
+}
+.featured-lion .center a:hover {
+  letter-spacing: 1px;
+}
+
+/** BEETLE MOUNDS **/
+/* Top links bar */
+.sub_menu {
+  background-color: #645142;
+  border-left: 5px solid #c2a897;
+  border-radius: 0;
+}
+.sub_menu a {
+  color: #e0c9b9 !important;
+}
+.sub_menu_item_selected {
+  background-color: #45382E;
+  color: #c2a897 !important;
+}
+
+/* Beetle list */
+#beetles td.right_odd {
+  background-color: #897768;
+}
+
+/** SHOPS **/
+/* "Owned by (username)" */
+.left[style$="margin-top: 10px;"] {
+  background-color: #45382E;
+  border-left: 5px solid #c2a897;
+  border-radius: 0 !important;
+  color: rgba(252, 249, 244, 0.55);
+}
+
+/* Items */
+.item {
+  background-color: #897768;
+  border-color: #c2a897;
+  border-radius: 0;
+}
+.item-header, .item-footer {
+  background-color: #645142;
+  color: rgba(252, 249, 244, 0.55);
+}
+.item input {
+  color: #272020;
+}
+
+/* CREDIT */
+.container.main::before {
+  content: "CSS by #276513";
+  background-color: #45382E;
+  color: #c2a897;
+  display: block;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  position: fixed;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 5;
+}
+
+.container.main::after {
+  content: "";
+  background-image: url("https://i.imgur.com/DQxe3td.png");
+  background-size: cover;
+  display: block;
+  height: 188px;
+  width: 212px;
+  position: fixed;
+  left: 0;
+  bottom: -1rem;
+  z-index: 5;
+}
