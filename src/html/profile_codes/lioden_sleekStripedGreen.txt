@@ -1,1 +1,1 @@
-<link rel="stylesheet" type="text/css" href="https://liwoyadan.github.io/liodenryouta/src/css/lioden_sleekStripedGreenBlue.min.css" />
+<link rel="stylesheet" type="text/css" href="https://liwoyadan.github.io/liodenryouta/src/css/lioden_sleekStripedGreen.min.css" />
