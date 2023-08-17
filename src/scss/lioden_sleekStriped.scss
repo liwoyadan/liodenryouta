@@ -1,0 +1,955 @@
+/** SLEEK & STRIPED (BLUE) by Ryouta#276513 **/
+
+/* FONT IMPORTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Quattrocento&family=Telex&display=swap');
+$comfortaa: 'Comfortaa', cursive;
+$quattrocento: 'Quattrocento', serif;
+$telex: 'Telex', sans-serif;
+
+/* VARIABLES */
+
+$primary: #545f73;
+$secondary: #bcc4cc;
+$success: #688f5b;
+$warning: #8f6d5b;
+$danger: #8f5b63;
+$info: #5b878f;
+
+$text: darken($primary, 25%);
+$white: #f4f6fc;
+
+/** LAYOUT **/
+
+body {
+    background: repeating-linear-gradient( 45deg, lighten($primary, 25%), lighten($primary, 25%) 9.5px, lighten($secondary, 10%) 9.5px, lighten($secondary, 10%) 47.5px )!important;
+    color: $text;
+    font-family: $telex;
+}
+
+/* TEXT SELECTION */
+::selection {
+    background: $primary;
+    color: $white;
+}
+::-moz-selection {
+    background: $primary;
+    color: $white;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: lighten($primary, 20%);
+}
+::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 3px;
+}
+
+* {
+    scrollbar-color: $primary lighten($primary, 20%);
+    scrollbar-width: thin;
+}
+
+/** MAIN CONTENT **/
+
+/* Welcome back, [username] */
+.topbar {
+    background-color: darken($primary, 5%);
+    border: none;
+    border-top: none;
+    color: $white;
+
+    .welcomeback > a, .toplinks > li > a {
+        color: lighten($primary, 20%)!important;
+
+        &:hover {
+            color: lighten($primary, 25%)!important;
+        }
+    }
+}
+
+/* Top navigation bar */
+.navbar {
+    background-color: $primary;
+    border: 0;
+    min-height: 0;
+
+    /* LOGO REPLACER */
+    /* .navbar-brand>img {
+        content: url('IMAGE URL HERE');
+    } */
+
+    li {
+        background-color: inherit;
+
+        a {
+            color: darken($primary, 20%)!important;
+            font-family: $quattrocento;
+            transition: all 150ms ease;
+
+            &:hover {
+                background-color: darken($primary, 15%)!important;
+                color: lighten($primary, 10%)!important;
+            }
+        }
+    }
+
+    /* Mobile navigation toggle button */
+    &-toggle {
+        border-color: darken($primary, 15%)!important;
+
+        &:hover, &:focus {
+            background-color: darken($primary, 15%)!important;
+        }
+    }
+
+    /* Mobile navigation divider */
+    &-collapse {
+        border-color: darken($primary, 15%);
+    }
+}
+
+/* RIGHT COLUMN (and overall container) */
+.main {
+    background-color: darken($secondary, 5%);
+    border: none;
+    box-shadow: none;
+}
+
+/* LEFT COLUMN */
+.col-md-9 {
+    background-color: $secondary;
+}
+
+/* HEADINGS */
+h1 {
+    color: $primary;
+    font-family: $comfortaa;
+    font-size: 4rem;
+    text-align: center;
+}
+
+h2 {
+    color: $primary;
+    font-family: $comfortaa;
+}
+
+h3 {
+    color: $primary!important;
+    font-family: $quattrocento;
+}
+
+h4 {
+    color: $primary!important;
+    font-family: $quattrocento;
+}
+
+/* LINKS */
+a, a:link, a:visited {
+    color: $primary!important;
+
+    &:hover {
+        color: lighten($primary, 5%)!important;
+    }
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+    background-color: lighten($primary, 20%);
+
+    /* "Den" in Home / Den */
+    .active {
+        color: darken($primary, 20%);
+    }
+}
+
+/* ALERTS */
+$alerts: ("success": $success, "warning": $warning, "danger": $danger);
+
+.alert {
+    @each $alert, $clr in $alerts {
+        &.alert-#{$alert} {
+            background-color: $clr;
+            border: 1px solid darken($clr, 3%);
+            color: $white;
+
+            a {
+                color: lighten($clr, 35%) !important;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+/* INPUT BUTTONS */ 
+input[type="submit"], input[name="togglechat"], button[type="submit"], #btnChatSend {
+    background: lighten($primary, 15%);
+    border: 0;
+    box-shadow: none;
+    color: darken($primary, 25%);
+    text-shadow: none;
+    transition: all 150ms ease;
+
+    &:hover {
+        background: darken($primary, 10%);
+        border: 0;
+        color: lighten($primary, 20%);
+        text-shadow: none;
+    }
+}
+
+/* SELECT DROPDOWNS */
+select {
+    background-color: darken($secondary, 20%);
+    border: 0;
+    color: $text;
+
+    option {
+        color: $text;
+    }
+}
+
+input[type="text"], textarea {
+    background-color: darken($secondary, 20%);
+    border: 0;
+    color: $text;
+}
+
+/* When typing in textbox */
+input:focus-visible, textarea:focus-visible {
+    outline: 1px solid $text;
+}
+
+/** RIGHT COLUMN CONTENT **/
+
+/* ENERGY BARS, ACHIEVEMENTS, & BOOKMARKS */
+.panel {
+    background-color: lighten($secondary, 5%)!important;
+    box-shadow: none!important;
+    border: 0!important;
+    color: $text!important;
+}
+
+/* STAT BARS */
+.progress {
+    background-color: lighten($secondary, 10%);
+
+    .progress-bar {
+        /* IMPRESSION */
+        background-color: $info;
+
+        @each $alert, $clr in $alerts {
+            &.progress-bar-#{$alert} {
+                background-color: $clr;
+            }
+        }
+    }
+
+    div {
+        color: $text;
+    }
+}
+
+/* CHATBOX */
+.nolayout body {
+    background: darken($secondary, 5%)!important;
+}
+
+.s-chat-message {
+    &:nth-child(even) {
+        background-color: lighten($primary, 10%);
+        border: 0;
+        border-left: 6px solid transparent;
+
+        a:hover {
+            color: darken($primary, 20%)!important;
+        }
+    }
+
+    &:nth-child(odd) {
+        background-color: lighten($secondary, 10%);
+        border: 0;
+        border-left: 6px solid transparent;
+    }
+
+    /* Pinned message */
+    &__pinned {
+        background-color: darken($primary, 15%)!important;
+        color: $white!important;
+
+        a {
+            color: lighten($primary, 10%)!important;
+        }
+    }
+
+    /* Moderator message */
+    &__mod {
+        background-color: $success!important;
+        border: 0;
+        border-left: 6px solid transparent;
+        color: darken($success, 30%);
+    }
+
+    /* Message timestamps */
+    &_timestamp {
+        color: rgba($text, 0.65);
+    }
+
+    /* Giveaway channel - claim list button on messages */
+    &_claim {
+        background-color: $secondary;
+        border-bottom: 0;
+        color: $text;
+    }
+
+    /* Selected message */
+    &.hasContext {
+        background-color: darken($primary, 5%)!important;
+        border-left-color: $primary!important;
+        color: $white;
+    }
+
+    a {
+        color: rgba($text, 0.8)!important;
+    }
+}
+
+/* When there's no pinned message */
+#chatMessagePinned {
+    background-color: $primary;
+    border-bottom-color: darken($primary, 15%);
+    color: $white;
+}
+
+/* Giveaway channel - claim list */
+#modalClaimList {
+    background-color: $primary;
+    border: 0;
+    color: $white;
+
+    h3 {
+        background-color: darken($primary, 5%);
+        color: $white!important;
+    }
+
+    a {
+        color: $white!important;
+    }
+}
+
+#modalClaimList button.close {
+    color: $white;
+}
+
+/* Channel list */
+#label_currentChannel, #fraChatChannelMenu {
+    background-color: darken($secondary, 20%)!important;
+    border: 0!important;
+    box-shadow: none;
+
+    .channelSwitcher{
+        color: $text!important;
+
+        &:hover {
+            background-color: darken($secondary, 10%)!important;
+        }
+
+        &.active {
+            background-color: darken($secondary, 30%)!important;
+        }
+    }
+}
+
+/* Chatbox buttons for settings, refresh, etc */
+#fraChatSettings, #btnLoadNewMessages, .s-chat-message_menu {
+    filter: opacity(0.65);
+
+    &:hover {
+        filter: opacity(0.85);
+    }
+}
+
+#chatMessageContainer {
+    border: 0;
+}
+
+/* Chatbox text input */
+#txtChatInput {
+    background-color: darken($secondary, 20%);
+    border: 0!important;
+    color: $text;
+}
+
+/** PROFILE/LEFT COLUMN CONTENT **/
+
+/* PRIDE / KING INFOBOX */
+#about {
+    background-color: darken($secondary, 7.5%);
+    border: 0;
+
+    /* Box header */
+    .top.center {
+        background-color: darken($primary, 20%);
+        border: 0;
+        font-family: $comfortaa;
+
+        /* King link */
+        a {
+            color: lighten($primary, 15%)!important;
+
+            &:hover {
+                color: lighten($primary, 20%)!important;
+            }
+        }
+    }
+
+    /* this just centers the king icon vertically next to the info */
+    tr.right {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+
+        /* i probably could've done this with :has() but whatever i wrote it with :not() and it works */
+        td:not(.right):not([width="3"]) {
+            width: unset !important;
+        }
+    }
+
+    /* King icon */
+    #lion_image {
+        div {
+            border: 3px solid lighten($primary, 15%);
+            border-radius: 50%;
+        }
+    }
+
+    /* some mobile margins... */
+    .inner-table {
+        border-spacing: 1px 3px;
+    }
+
+
+    /* Info table */
+    .inner-table.auto {
+        /* Left side - Level:, Stats:, etc */
+        .left {
+            background-color: darken($primary, 10%);
+            color: lighten($primary, 30%);
+        }
+
+        /* Right side - the values */
+        .right {
+            background-color: darken($primary, 5%);
+            color: $white;
+
+            a {
+                color: lighten($primary, 25%)!important;
+
+                &:hover {
+                    color: lighten($primary, 30%)!important;
+                }
+            }
+        }
+    }
+
+    /* Box footer */
+    .bottom {
+        background-color: darken($primary, 15%);
+
+        /* "There are # lions with mutations in X's pride." */
+        a {
+            color: $white!important;
+            text-decoration: none;
+        }
+    }
+}
+
+/* PLAYER INFOBOX */
+#player {
+    background-color: darken($secondary, 7.5%);
+    border: 0 !important;
+    border-collapse: separate;
+
+    /* vertically centering player icon */
+    tr.right {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /* Box header */
+    .top {
+        background-color: darken($primary, 20%);
+
+        /* Player ID # */
+        .floatright {
+            color: lighten($primary, 20%);
+        }
+    }
+
+    /* Player username */
+    div.center.xlarge {
+        color: darken($primary, 5%);
+    }
+
+    .inner-table.auto {
+        /* Joined:, Last Active: */
+        .left {
+            background-color: darken($primary, 10%);
+            color: lighten($primary, 30%);
+        }
+
+        /* Joined & LAst Active Date/Times */
+        .right {
+            background-color: darken($primary, 5%);
+            color: $white;
+        }
+    }
+
+    p.center.xlarge {
+        color: lighten($primary, 10%);
+
+        /* Links */
+        a {
+            color: $primary;
+
+            &:hover {
+                color: lighten($primary, 5%)!important;
+            }
+        }
+    }
+
+    /* Giftbox image */
+    .center.auto > img {
+        border: 0;
+    }
+
+    /* Player Icon */
+    .right {
+        img {
+            border: 3px solid lighten($primary, 15%);
+            border-radius: 10%;
+        }
+    }
+
+    td.right { 
+        width: unset!important;
+    }
+}
+
+/* CAVES & MOUNDS */
+.cave-grid, .mound-grid {
+    background-color: darken($primary, 15%);
+    border: 0;
+    color: lighten($primary, 35%);
+    font-weight: normal;
+}
+
+
+/* IMAGE REPLACEMENTS */
+/* a {
+    &[href$="unsorted.php?id=USERID"] > img {
+        content: url('IMAGE URL HERE') !important;
+    }
+
+    &[href$="lionoverview.php?id=USERID"] > img {
+        content: url('IMAGE URL HERE') !important;
+    }
+
+    &[href$="CAVE ID HERE"] > img {
+        content: url('IMAGE URL HERE') !important;
+    }
+
+    &[href$="unsorted-beetles.php?id=USERID"] > img {
+        content: url('IMAGE URL HERE') !important;
+    }
+
+    &[href$="create-cave.php"] > img {
+        content: url('IMAGE URL HERE') !important;
+    }
+
+    &[href$="create-mound.php"] > img {
+        content: url('IMAGE URL HERE') !important;
+    }
+}
+
+/* PREGNANT LIONESSES */
+/* div.cave-grid > img, a[href$="nesting.php"] > img {
+    content: url('https://puu.sh/EJV1D/dfefa228df.png') !important;
+}
+
+/* MOUNDS */
+/* .mound-grid img {
+    background: url('IMAGE URL HERE');
+    width: 0;
+    height: 0;
+    padding-top: 80px;
+    padding-right: 130px;
+}
+
+/* TRADITIONAL CAVE DISPLAY */
+#pride {
+    border-left: 1px solid darken($primary, 5%);
+    border-right: 1px solid darken($primary, 5%);
+    border-bottom: 1px solid darken($primary, 5%);
+
+    th > a {
+        color: $white!important;
+    }
+
+    /* LV / Stats / Name Row */
+    .left.b {
+        background-color: $primary;
+        color: lighten($primary, 35%);
+    }
+
+    .right_odd {
+        background-color: darken($secondary, 10%);
+    }
+
+    /* Heat Countdown */
+    .badge {
+        background-color: darken($primary, 5%);
+        color: lighten($primary, 35%);
+    }
+
+    .bottom {
+        background-color: darken($primary, 15%);
+    }
+}
+
+/* SPARRING */ 
+#sparring {
+    border: 0; 
+
+    tr > th {
+        background-color: darken($primary, 15%);
+    }
+
+    tr {
+        background-color: darken($primary, 5%);
+        color: lighten($primary, 35%);
+    }
+
+    .right_odd {
+        background-color: darken($secondary, 10%);
+        color: $text;
+    }
+}
+
+/* FEED ALL, PLAY ALL */
+.feature {
+    background-color: darken($primary, 5%)!important;
+    color: lighten($primary, 35%);
+    border: 0!important;
+    border-radius: 3px!important;
+
+    h3 {
+        color: $white!important;
+    }
+}
+
+/* DYNASTY ETC BUTTONS */
+.dynastylist {
+    .left {
+        background-color: darken($primary, 15%);
+        border: 0;
+
+        h3 {
+            color: lighten($primary, 35%)!important;
+        }
+    }
+
+    /* img {
+        content: url('IMAGE URL HERE') !important;
+    } */
+}
+
+/* THINNER BUTTONS */
+.col-md-3 {
+    .left {
+        background-color: darken($primary, 15%);
+        border: 0;
+        color: lighten($primary, 35%);
+    }
+}
+
+/* ATTACK THIS LION */
+#attack {
+    background-color: darken($secondary, 7.5%);
+    border: 0;
+
+    th {
+        background-color: darken($primary, 20%);
+        border: 0;
+    }
+
+    .bottom {
+        background-color: darken($primary, 15%);
+
+        a {
+            color: $white!important;
+            text-decoration: none;
+        }
+    }
+}
+
+/* ALLIES & CLANS */
+#allies, #clans {
+    background-color: darken($secondary, 7.5%);
+    border: 0;
+
+    .top {
+        background-color: darken($primary, 20%);
+        border: 0;
+    }
+
+    .left {
+        background-color: darken($primary, 10%);
+        height: 3px!important;
+    }
+
+    .bottom {
+        background-color: darken($primary, 15%);
+
+        a {
+            color: $white!important;
+            text-decoration: none;
+        }
+    }
+}
+
+/* YOUR DETAILS */
+.table[width='500'] {
+    background-color: darken($secondary, 7.5%);
+    border: 0;
+
+    tbody > tr > th, td.top {
+        background-color: darken($primary, 20%)!important;
+        border: 0!important;
+        color: $white;
+    }
+} 
+
+#editdetailspanel {
+    tr {
+        &:not(:last-child, :nth-child(7)) > .left.b {
+            border-bottom: 1px solid darken($secondary, 7.5%);
+        }
+
+        .left.b {
+            background-color: darken($primary, 10%);
+            color: lighten($primary, 30%);
+        }
+
+        .right {
+            background-color: darken($secondary, 7.5%);
+        }
+    }
+
+    a {
+        color: $primary;
+    }
+
+    .bottom {
+        background-color: darken($primary, 5%);
+    }
+}
+
+/* ACCOUNT OPTIONS */
+#accountoptionspanel {
+    .left {
+        background-color: darken($primary, 10%);
+
+        a {
+            background-color: darken($primary, 10%);
+            color: lighten($primary, 30%)!important;
+        }
+    }
+
+    .right {
+        background-color: darken($secondary, 7.5%);
+    }
+
+    .item {
+        background-color: darken($secondary, 20%);
+        border: 0;
+
+        &-header {
+            background-color: darken($primary, 10%);
+            color: lighten($primary, 30%);
+        }
+    }
+
+    .bottom {
+        background-color: darken($primary, 5%);
+    }
+}
+
+.slider {
+    background-color: $secondary!important;
+
+    &:before {
+        background-color: $white!important;
+    }
+}
+
+input {
+    &:checked+.slider {
+        background-color: $success!important;
+    }
+
+    &:focus+.slider {
+        box-shadow: 0 0 1px $success!important;
+    }
+}
+
+/* CHANGE PASSWORD */
+#changepasswordpanel {
+    .left.b {
+        background-color: darken($primary, 10%);
+        color: lighten($primary, 30%);
+    }
+
+    .right {
+        background-color: darken($secondary, 7.5%);
+
+        input[type="password"] {
+            background-color: darken($secondary, 20%);
+            border: 0;
+            color: $text;
+        }
+    }
+
+    .bottom {
+        background-color: darken($primary, 5%);
+    }
+}
+
+/* FOOTER */
+.footer {
+    color: darken($primary, 25%);
+    text-shadow: none;
+
+    a {
+        border-bottom: 0!important;
+        text-shadow: none;
+    }
+}
+
+/** DENS **/ 
+
+/* Top lion/cave image */
+.featured-lion {
+    background-color: $primary;
+    color: $white;
+    margin-bottom: 2rem;
+
+    div img {
+        max-width: 100%;
+        height: 500px!important;
+    }
+
+    /* Featured lion text */
+    .center {
+        font-family: $quattrocento;
+        padding-top: 0.75rem;
+
+        a {
+            color: $text!important;
+        }
+    }
+}
+
+/* Cave Stats & Cave Settings */
+.table.auto {
+    border: 0;
+
+    /* Box header */
+    td.top, th[colspan="2"] {
+        background-color: darken($primary, 15%);
+        color: $white;
+    }
+
+    td {
+        background-color: darken($secondary, 7.5%);
+
+        &.left {
+            background-color: darken($primary, 10%);
+            border-bottom: 1px solid darken($secondary, 7.5%);
+            color: lighten($primary, 30%);
+        }
+    }
+}
+
+/** BEETLE MOUNDS **/ 
+
+/* Top links bar */
+.sub_menu {
+    background-color: darken($primary, 15%);
+    border-radius: 10px;
+
+    a {
+        color: $primary!important;
+    }
+
+    &_item_selected {
+        background-color: darken($primary, 5%);
+    }
+}
+
+/* Beetle list */
+#beetles {
+    border: 1px solid darken($primary, 15%);
+
+    td.left {
+        background-color: darken($primary, 10%);
+        color: lighten($primary, 30%);
+    }
+
+    td.right_odd {
+        background-color: darken($secondary, 10%);
+    }
+}
+
+/** SHOPS **/
+
+/* "Owned by (username)" */
+.left[style$="margin-top: 10px;"] {
+    background-color: lighten($primary, 20%);
+}
+
+/* Headers */
+.table th {
+    background-color: darken($primary, 15%);
+    color: $white;
+}
+
+/* Items */
+.item {
+    background-color: rgba($white, 0.35);
+    border-color: $primary;
+
+    &-header, &-footer {
+        background-color: darken($primary, 5%);
+        color: $white;
+    }
+}
+
+/* CREDIT */
+.container.main::before {
+    content: 'CSS by #276513';
+    background-color: $primary;
+    color: $white;
+    display: block;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    position: fixed;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    z-index: 5;
+}

@@ -1,0 +1,1659 @@
+/*! STITCHED by Ryouta#276513 */
+
+/* FONT IMPORTS & SVGs */
+
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@400;700&family=Mulish:ital,wght@0,400;0,700;1,400;1,700&family=Podkova:wght@400;700&display=swap');
+$mulish: 'Mulish', sans-serif;
+$mitr: 'Mitr', sans-serif;
+$podkova: 'Podkova', serif;
+
+/* VARIABLES */
+
+$red: #dba8b9;
+$green: #a8e0c3;
+$blue: #b2cce0;
+$yellow: #e0d7b7;
+
+$accent: #cf5f97;
+$success: darken($green, 20%);
+$warning: darken($yellow, 20%);
+$danger: darken($red, 20%);
+$info: darken($blue, 20%);
+
+$text: #413f3d;
+$white: #f3f2f1;
+
+@mixin stitchBorder($clr, $width: 3px) {
+    box-shadow: 0 0 0 $width $clr!important;
+}
+
+@mixin stitchBorderShadow($clr, $width: 3px, $shade: darken($white, 35%)) {
+    box-shadow: 0 0 0 $width $clr, rgba($shade, 0.25) 0px 15px 45px -20px, rgba($shade, 0.3) 0px 5px 10px, rgba(darken($clr, 35%), 0.35) 0px -2px 6px 0px inset!important;
+}
+
+/*! generated and modified from https://codepen.io/amit_sheen/pen/xxZeyjO */
+@mixin bgDash($clr, $size: 1px) {
+    background-image: repeating-linear-gradient(0deg, $clr, $clr 10px, transparent 10px, transparent 14px, $clr 14px), repeating-linear-gradient(90deg, $clr, $clr 10px, transparent 10px, transparent 14px, $clr 14px), repeating-linear-gradient(180deg, $clr, $clr 10px, transparent 10px, transparent 14px, $clr 14px), repeating-linear-gradient(270deg, $clr, $clr 10px, transparent 10px, transparent 14px, $clr 14px);
+    background-size: $size calc(100% + 14px), calc(100% + 14px) $size, $size calc(100% + 14px) , calc(100% + 14px) $size;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+}
+
+@keyframes dashAnim {
+    from { background-position: 0 0, -14px 0, 100% -14px, 0 100%; }
+    to { background-position: 0 -14px, 0 0, 100% 0, -14px 100%; }
+}
+
+@mixin bgDashRecolor($clr) {
+    @include bgDash(darken($clr, 30%));
+    color: darken($clr, 30%);
+
+    &:hover {
+        @include bgDash(darken($clr, 20%));
+        color: darken($clr, 20%);
+    }
+}
+
+/* SELECTION */
+::selection {
+    background: $accent;
+    color: lighten($white, 5%);
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: lighten($accent, 20%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: $accent;
+    border-radius: 3px;
+}
+
+* { 
+    scrollbar-color: $accent lighten($accent, 20%);
+    scrollbar-width: thin;
+}
+
+/* INPUT BUTTONS */ 
+input[type="submit"], input[name="togglechat"], button[type="submit"], #btnChatSend {
+    background: $white;
+    @include bgDash(darken($green, 30%));
+    box-shadow: none;
+    border: 0;
+    color: darken($green, 30%);
+    text-shadow: none;
+    transition: all 150ms ease;
+
+    &:hover {
+        animation: dashAnim 1s infinite linear;
+        background: $white;
+        @include bgDash(darken($green, 15%));
+        border: 0;
+        color: darken($green, 15%);
+        text-shadow: none;
+    }
+}
+
+/* SELECT DROPDOWNS */
+select {
+    background: $white;
+    border: 0;
+    color: $text;
+
+    option {
+        color: $text;
+    }
+}
+
+/** MAIN CONTENT **/
+
+body {
+    background-color: $white;
+    /*! modified from css3 patterns gallery https://projects.verou.me/css3patterns/#tartan */
+    background-image: 
+        repeating-linear-gradient(transparent, transparent 50px, rgba($yellow, 0.4) 50px, rgba($yellow, 0.4) 53px, transparent 53px, transparent 63px, rgba($yellow, 0.4) 63px, rgba($yellow, 0.4) 66px, transparent 66px, transparent 116px, rgba($green, 0.5) 116px, rgba($green, 0.5) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba($green, 0.5) 169px, rgba($blue, 0.5) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba($blue, 0.5) 182px, rgba($blue, 0.5) 232px, transparent 232px),
+        repeating-linear-gradient(270deg, transparent, transparent 50px, rgba($yellow, 0.4) 50px, rgba($yellow, 0.4) 53px, transparent 53px, transparent 63px, rgba($yellow, 0.4) 63px, rgba($yellow, 0.4) 66px, transparent 66px, transparent 116px, rgba($blue, 0.5) 116px, rgba($blue, 0.5) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba($blue, 0.5) 169px, rgba($red, 0.5) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba($red, 0.5) 182px, rgba($red, 0.5) 232px, transparent 232px),
+        repeating-linear-gradient(125deg, transparent, transparent 2px, rgba($yellow, 0.2) 2px, rgba($yellow, 0.2) 3px, transparent 3px, transparent 5px, rgba($yellow, 0.2) 5px);
+    background-size: 27.5% 27.5%;
+    background-repeat: repeat;
+    color: $text;
+    font-family: $mulish;
+}
+
+.topbar {
+    background: darken($red, 20%);
+    border: 2px dashed $white;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    @include stitchBorder(darken($red, 20%));
+    color: $white;
+
+    .welcomeback > a, .toplinks > li > a {
+        color: lighten($red, 5%)!important;
+
+        &:hover {
+            color: lighten($red, 10%)!important;
+        }
+    }
+
+    /* TODO: */
+    img[src$="silver.png"] {
+        content: url('https://64.media.tumblr.com/c944f4bd363dcbe79801f1a48663c060/cd445e9a26f7abb9-51/s75x75_c1/0cec7dfd4a1d637d0b259d6f1f9a9dc161abd85d.gifv')!important;
+    }
+
+    img[src$="gold.png"] {
+        content: url('https://64.media.tumblr.com/d791306e31465713b41ee1e193de95eb/cd445e9a26f7abb9-4e/s75x75_c1/8bd6a5412fbf04f17865b6b0b0f5ac55394fd598.gifv')!important;
+    }
+
+    @media (max-width: 768px) {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+.navbar {
+    background: darken($white, 5%);
+    border: 0;
+    border-radius: 50px 50px 0 0;
+    min-height: 0;
+    
+    .navbar-brand>img {
+        filter: brightness(1.25) hue-rotate(305deg) saturate(0.65);
+    }
+
+    li {
+        background-color: inherit;
+
+        &:first-child > a, &:nth-child(7) > a {
+            background-color: $red;
+            @include stitchBorder($red, 2px);
+
+            &:hover, &:active, &:focus {
+                background-color: darken($red, 5%)!important;
+                box-shadow: 0 0 0 2px darken($red, 5%), 2px 1px 10px 4px rgba(darken($red, 20%), 0.25);
+            }
+        }
+
+        &:nth-child(2) > a, &:nth-child(5) > a, &:nth-child(8) > a {
+            background-color: $yellow;
+            @include stitchBorder($yellow, 2px);
+
+            &:hover, &:active, &:focus {
+                background-color: darken($yellow, 5%)!important;
+                box-shadow: 0 0 0 2px darken($yellow, 5%), 2px 1px 10px 4px rgba(darken($yellow, 20%), 0.25);
+            }
+        }
+
+        &:nth-child(3) > a, &:nth-child(6) > a {
+            background-color: $green;
+            @include stitchBorder($green, 2px);
+
+            &:hover, &:active, &:focus {
+                background-color: darken($green, 5%)!important;
+                box-shadow: 0 0 0 2px darken($green, 5%), 2px 1px 10px 4px rgba(darken($green, 20%), 0.25);
+            }
+        }
+
+        &:nth-child(4) > a {
+            background-color: $blue;
+            @include stitchBorder($blue, 2px);
+
+            &:hover, &:active, &:focus {
+                background-color: darken($blue, 5%)!important;
+                box-shadow: 0 0 0 2px darken($blue, 5%), 2px 1px 10px 4px rgba(darken($blue, 20%), 0.25);
+            }
+        }
+
+        a {
+            border: 2px dashed $white;
+            border-radius: 10px;
+            box-shadow: 2px 1px 6px 4px rgba(10, 10, 0, 0);
+            color: $white!important;
+            font-family: $mitr;
+            font-weight: 400;
+            margin-right: 7.5px;
+            text-transform: lowercase;
+            transition: all 150ms ease;
+            z-index: 2;
+
+            &:hover {
+                color: $white!important;
+                
+                @media (min-width: 768px) {
+                    transform: rotate(-10deg);
+                }
+            }
+
+            @media (max-width: 768px) {
+                margin-right: 1rem;
+                margin-bottom: 0.5rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .navbar-toggle {
+        background-color: rgba($red, 0.35);
+        border-color: $red;
+        border-style: dashed;
+        border-width: 2px;
+        margin-right: 3rem;
+
+        &:hover, &:focus {
+            background-color: rgba($red, 0.55)!important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar-collapse {
+            border: 0;
+            border-top: 2px dashed $red;
+        }
+    }
+}
+
+/* RIGHT COLUMN (and overall container) */
+.main {
+    background-color: darken($white, 5%);
+    border: 5px dashed darken($red, 5%);
+    border-radius: 50px;
+    box-shadow: 0 0 0 10px $white, rgba(darken($red, 35%), 0.25) 0px 54px 55px, rgba(darken($red, 35%), 0.12) 0px -12px 30px, rgba(darken($red, 35%), 0.12) 0px 4px 6px, rgba(darken($red, 35%), 0.17) 0px 12px 13px, rgba(darken($red, 35%), 0.09) 0px -3px 5px;
+
+    @media (max-width: 768px) {
+        margin-top: 2rem;
+    }
+}
+
+/* LEFT COLUMN */
+.col-md-9 {
+    background-color: $white;
+    border-radius: 0 0 0 50px;
+}
+
+/* HEADINGS */
+h1 {
+    background: linear-gradient(to bottom, darken($red, 10%) 0%, darken($red, 10%) 34%, darken($green, 10%) 35%, darken($green, 10%) 49%, darken($blue, 10%) 50%, darken($blue, 10%) 64%, darken($yellow, 10%) 65%, darken($yellow, 10%) 100%);
+    background-clip: text;
+    font-family: $podkova;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    color: darken($yellow, 10%);
+    font-family: $podkova;
+}
+
+h3 {
+    color: darken($blue, 10%)!important;
+    font-family: $mitr;
+    text-shadow:
+            -1px -1px 0 lighten($white, 5%),  
+            1px -1px 0 lighten($white, 5%),
+            -1px 1px 0 lighten($white, 5%),
+            1px 1px 0 lighten($white, 5%);
+    text-transform: lowercase;
+}
+
+h4 {
+    color: darken($green, 10%)!important;
+    font-family: $mitr;
+}
+
+/* LINKS */
+a, a:link, a:visited {
+    color: darken($red, 20%)!important;
+
+    &:hover {
+        color: darken($red, 30%)!important;
+    }
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+    background-color: $blue;
+    border: 2px dashed $white;
+    border-radius: 10px;
+    @include stitchBorder($blue, 2px);
+
+    &>li+li:before {
+        color: $white;
+    }
+    a {
+        color: $white!important;
+        transition: color 150ms ease;
+
+        &:hover {
+            color: darken($blue, 25%)!important;
+        }
+    }
+
+    .active {
+        color: darken($blue, 25%);
+    }
+}
+
+input[name="bookmark"] {
+    background-color: darken($blue, 20%)!important;
+    @include bgDash($white);
+    color: $white!important;
+
+    &:hover {
+        background-color: darken($blue, 15%)!important;
+        @include bgDash($white);
+    }
+}
+
+/* ALERTS */
+$alerts: ("success": $success, "warning": $warning, "danger": $danger);
+
+.alert {
+    @each $alert, $clr in $alerts {
+        &.alert-#{$alert} {
+            background-color: $clr;
+            border: 1px dashed $white;
+            @include stitchBorder($clr, 1px);
+            color: $white;
+
+            a {
+                color: lighten($clr, 35%) !important;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+/** RIGHT COLUMN CONTENT **/
+
+/* ENERGY BARS, ACHIEVEMENTS, & BOOKMARKS */
+.panel {
+    background: lighten($white, 5%)!important;
+    border-color: $yellow!important;
+    border-style: dashed!important;
+    border-width: 2px!important;
+    @include stitchBorder(lighten($white, 5%), 2px);
+    color: $text!important;
+
+    &:nth-child(even) {
+        transform: rotate(2deg);
+    }
+
+    &:nth-child(odd) {
+        transform: rotate(-2deg);
+    }
+
+    &:nth-child(1) {
+        border-color: $blue!important;
+    }
+
+    &:nth-child(2) {
+        border-color: $green!important;
+    }
+}
+
+/* STAT BARS */
+.progress {
+    background: $white;
+
+    .progress-bar {
+        /* IMPRESSION */
+        background-image: linear-gradient(45deg, lighten($info, 25%) 25%, lighten($info, 30%) 25%, lighten($info, 30%) 50%, lighten($info, 25%) 50%, lighten($info, 25%) 75%, lighten($info, 30%) 75%, lighten($info, 30%) 100%);
+        background-size: 28.28px 28.28px;
+
+        @each $alert, $clr in $alerts {
+            &.progress-bar-#{$alert} {
+                background-image: linear-gradient(45deg, lighten($clr, 25%) 25%, lighten($clr, 30%) 25%, lighten($clr, 30%) 50%, lighten($clr, 25%) 50%, lighten($clr, 25%) 75%, lighten($clr, 30%) 75%, lighten($clr, 30%) 100%);
+            }
+        }
+    }
+
+    div {
+        color: $text;
+        font-weight: bold;
+    }
+}
+
+/* BOOKMARKS */
+
+.panel-body.small.clear {
+    a:nth-child(1), a:nth-child(5), a:nth-child(9), a:nth-child(13), a:nth-child(17), a:nth-child(21) {
+        color: darken($green, 10%)!important;
+
+        &:hover {
+            color: darken($green, 20%)!important;
+        }
+    }
+}
+
+/* COMMENT BOX */
+
+#commentBox {
+    background-color: lighten($white, 10%);
+    border: 2px dashed $blue!important;
+    margin-bottom: 0.75rem;
+
+    @include stitchBorderShadow(lighten($white, 10%));
+}
+
+.comment:nth-child(even) {
+    background-color: rgba($blue, 0.1)!important;
+    color: darken($blue, 25%);
+}
+
+#comment {
+    border: 2px dashed $blue!important;
+}
+
+/* CHATBOX */
+.nolayout body {
+    background: transparent!important;
+    overflow: hidden;
+}
+
+.s-chat-message {
+    border-bottom: 1px dashed $white!important;
+
+    &:nth-child(even) {
+        background-color: lighten($blue, 15%);
+        border: 0;
+        border-left: 6px solid transparent;
+        color: darken($blue, 40%);
+
+        a {
+            color: darken($blue, 30%)!important;
+
+            &:hover {
+                color: darken($blue, 20%)!important;
+            }
+        }
+    }
+
+    &:nth-child(odd) {
+        background-color: lighten($yellow, 15%);
+        border: 0;
+        border-left: 6px solid transparent;
+        color: darken($yellow, 40%)!important;
+    }
+
+    &:last-child {
+        border-bottom: 0!important;
+    }
+
+    &__pinned {
+        background-color: darken($red, 5%)!important;
+        color: $white!important;
+
+        a {
+            color: darken($red, 30%)!important;
+
+            &:hover {
+                color: darken($red, 25%)!important;
+            }
+        }
+    }
+
+    &__mod {
+        background-color: lighten($success, 15%)!important;
+        border: 0;
+        border-left: 6px solid transparent;
+        color: darken($success, 30%)!important;
+    }
+
+    &_timestamp {
+        color: rgba($text, 0.65);
+    }
+
+    a {
+        color: darken($yellow, 30%)!important;
+
+        &:hover {
+            color: darken($yellow, 20%)!important;
+        }
+    }
+}
+
+#chatMessagePinned.s-chat-message__pinned {
+    border-bottom-color: darken($red, 15%)!important;
+}
+
+#label_currentChannel, #fraChatChannelMenu {
+    background-color: lighten($white, 5%)!important;
+    border: 2px dashed $yellow!important;
+    box-shadow: none;
+
+    .channelSwitcher{
+        color: $text!important;
+
+        &:hover {
+            background: $white!important;
+        }
+
+        &.active {
+            background: darken($white, 5%)!important;
+        }
+    }
+}
+
+#fraChatSettings, #btnLoadNewMessages, .s-chat-message_menu {
+    filter: opacity(0.65);
+
+    &:hover {
+        filter: opacity(0.85);
+    }
+}
+
+#chatMessageContainer {
+    border: 2px dashed $red;
+    z-index: 4;
+}
+
+#txtChatInput {
+    background-color: lighten($white, 5%);
+    border: 2px dashed $red!important;
+    color: $text;
+}
+
+/* PRIDE INFOBOX */
+#about {
+    background-color: lighten($white, 5%);
+    border: 0;
+    border-radius: 35px;
+    @include stitchBorderShadow(lighten($white, 5%), 4px);
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    transform: rotate(1deg);
+
+    .top.center {
+        background-color: $yellow;
+        border-bottom: 2px dashed lighten($white, 5%);
+        border-radius: 35px 35px 0 0;
+        box-shadow: 0px 5px $yellow;
+        font-family: $podkova;
+
+        a {
+            color: darken($yellow, 20%)!important;
+
+            &:hover {
+                color: darken($yellow, 30%)!important;
+            }
+        }
+    }
+
+    tr.right {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+
+        /* i probably could've done this with :has() but whatever i wrote it with :not() and it works */
+        td:not(.right):not([width="3"]) {
+            width: unset !important;
+        }
+    }
+
+    #lion_image {
+        position: relative; 
+
+        &::before {
+            content: '';
+            background-color: $green;
+            border: 2px dashed $white;
+            @include stitchBorder($green);
+            height: 50px;
+            transform: rotate(10deg);
+            width: 50px;
+
+            position: absolute;
+            top: 0.25rem;
+            left: 0.25rem;
+            z-index: 3;
+        }
+
+        &::after {
+            content: '';
+            background-color: $blue;
+            border: 2px dashed $white;
+            border-radius: 50%;
+            @include stitchBorder($blue);
+            height: 75px;
+            width: 75px;
+
+            position: absolute;
+            bottom: -0.25rem;
+            right: -0.25rem;
+            z-index: -1;
+        }
+        
+        div {
+            background-color: $white;
+            border: 3px dashed $red;
+            border-radius: 50%;
+            @include stitchBorderShadow($white, 4px, darken($white, 45%));
+        }
+    }
+
+    @media (max-width: 605px) {
+        td.right:has(.inner-table) {
+            padding: 8px 0;
+        }
+    }
+
+    .inner-table.auto {
+        $ribbon: polygon(100% 0%, 90% 50%, 100% 100%, 0 100%, 0 0);
+        
+        tr:nth-child(1) {
+            .left:nth-child(odd) {
+                background-color: darken($blue, 5%);
+            }
+            .right:nth-child(even) {
+                background-color: $blue;
+            }
+
+            .left:nth-child(even) {
+                background-color: darken($red, 5%);
+            }
+            .right:nth-child(odd) {
+                background-color: $red;
+
+                a {
+                    color: darken($red, 15%)!important;
+
+                    &:hover {
+                        color: darken($red, 20%)!important;
+                    }
+                }
+            }
+        }
+
+        tr:nth-child(2) {
+            .left:nth-child(odd) {
+                background-color: darken($green, 5%);
+            }
+            .right:nth-child(even) {
+                background-color: $green;
+            }
+
+            .left:nth-child(even) {
+                background-color: darken($yellow, 5%);
+            }
+            .right:nth-child(odd) {
+                background-color: $yellow;
+
+                a {
+                    color: darken($yellow, 20%)!important;
+
+                    &:hover {
+                        color: darken($yellow, 25%)!important;
+                    }
+                }
+            }
+        }
+
+        tr:nth-child(3) {
+            .left:nth-child(odd) {
+                background-color: darken($red, 5%);
+            }
+            .right:nth-child(even) {
+                background-color: $red;
+            }
+
+            .left:nth-child(even) {
+                background-color: darken($blue, 5%);
+            }
+            .right:nth-child(odd) {
+                background-color: $blue;
+
+                a {
+                    color: darken($blue, 15%)!important;
+
+                    &:hover {
+                        color: darken($blue, 20%)!important;
+                    }
+                }
+            }
+        }
+
+        tr:nth-child(4) {
+            .left:nth-child(odd) {
+                background-color: darken($yellow, 5%);
+            }
+            .right:nth-child(even) {
+                background-color: $yellow;
+            }
+
+            .left:nth-child(even) {
+                background-color: darken($green, 5%);
+            }
+            .right:nth-child(odd) {
+                background-color: $green;
+
+                a {
+                    color: darken($green, 20%)!important;
+
+                    &:hover {
+                        color: darken($green, 25%)!important;
+                    }
+                }
+            }
+        }
+
+        tr:nth-child(5) {
+            .left:nth-child(1) {
+                background-color: darken($blue, 5%);
+            }
+            .right:nth-child(2) {
+                background-color: $blue;
+
+                a {
+                    color: darken($blue, 15%)!important;
+
+                    &:hover {
+                        color: darken($blue, 20%)!important;
+                    }
+                }
+            }
+
+            .left:nth-child(3) {
+                background-color: darken($red, 5%);
+            }
+            .right:nth-child(4) {
+                background-color: $red;
+
+                a {
+                    color: darken($red, 15%)!important;
+
+                    &:hover {
+                        color: darken($red, 20%)!important;
+                    }
+                }
+            }
+        }
+
+        tr:nth-child(6) {
+            .left:nth-child(1) {
+                background-color: darken($green, 5%);
+            }
+            .right:nth-child(2) {
+                background-color: $green;
+
+                a {
+                    color: darken($green, 20%)!important;
+
+                    &:hover {
+                        color: darken($green, 25%)!important;
+                    }
+                }
+            }
+
+            .left:nth-child(3) {
+                background-color: darken($yellow, 5%);
+            }
+            .right:nth-child(4) {
+                background-color: $yellow;
+
+                a {
+                    color: darken($yellow, 20%)!important;
+
+                    &:hover {
+                        color: darken($yellow, 25%)!important;
+                    }
+                }
+            }
+        }
+        
+        .left {
+            border-right: 2px dashed $white;
+            border-radius: 0;
+            color: $white;
+            text-align: right;
+        }
+
+        .right {
+            color: $white;
+            clip-path: $ribbon;
+            padding-right: 5rem;
+            width: max-content;
+
+            @media (max-width: 708px) {
+                padding-right: 2rem;
+            }
+
+            @media (max-width: 648px) {
+                padding-right: 0.5rem;
+                word-break: break-all;
+            }
+        }
+    }
+
+    .bottom {
+        background-color: $yellow;
+        border-top: 2px dashed lighten($white, 5%);
+        border-radius: 0 0 35px 35px;
+        box-shadow: 0px -5px $yellow;
+
+        a {
+            color: lighten($white, 5%)!important;
+            text-decoration: underline;
+            text-decoration-style: wavy;
+        }
+    }
+}
+
+/* PLAYER INFOBOX */
+#player {
+    background-color: lighten($white, 5%);
+    border: 0;
+    border-radius: 35px;
+    @include stitchBorderShadow(lighten($white, 5%), 4px);
+    margin-bottom: 3rem;
+    transform: rotate(-1deg);
+
+    tr.right {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .top {
+        background-color: $green;
+        border-bottom: 2px dashed lighten($white, 5%);
+        border-radius: 35px 35px 0 0;
+        box-shadow: 0px 5px $green;
+        font-family: $podkova;
+        font-size: 1.75rem;
+        padding: 0.75rem 2rem;
+
+        .floatright {
+            color: lighten($white, 5%);
+        }
+
+        &::before {
+            content: '★';
+            color: lighten($white, 5%);
+            margin-right: 0.5rem;
+        }
+    }
+
+    div.center.xlarge {
+        color: darken($blue, 15%);
+        font-family: $podkova;
+        font-size: 2.35rem;
+        letter-spacing: 1px;
+    }
+
+    .inner-table.auto {
+        $ribbon: polygon(100% 0%, 90% 50%, 100% 100%, 0 100%, 0 0);
+
+        .left:nth-child(1) {
+            background-color: darken($blue, 5%);
+        }
+        .right:nth-child(2) {
+            background-color: $blue;
+        }
+
+        .left:nth-child(4) {
+            background-color: darken($yellow, 5%);
+        }
+        .right:nth-child(5) {
+            background-color: $yellow;
+        }
+
+        .left {
+            border-right: 2px dashed $white;
+            border-radius: 0;
+            color: $white;
+        }
+
+        .right {
+            color: $white;
+            clip-path: $ribbon;
+            padding-right: 2rem;
+        }
+    }
+
+    p.center.xlarge {
+        color: darken($white, 15%); 
+
+        a {
+            font-family: $mitr;
+            font-weight: 400;
+            text-transform: lowercase;
+
+            &:first-child {
+                color: darken($green, 15%)!important;
+
+                &:hover {
+                    color: darken($green, 5%)!important;
+                }
+            }
+
+            &:nth-child(2) {
+                color: darken($red, 15%)!important;
+
+                &:hover {
+                    color: darken($red, 5%)!important;
+                }
+            }
+
+            &:last-child {
+                color: darken($blue, 15%)!important;
+
+                &:hover {
+                    color: darken($blue, 5%)!important;
+                }
+            }
+        }
+    }
+
+    td.right:not(:has(.inner-table)):has(img) {
+        position: relative; 
+
+        &::before {
+            content: '';
+            background-color: $red;
+            border-radius: 50%;
+            border: 2px dashed $white;
+            @include stitchBorder($red);
+            height: 45px;
+            width: 45px;
+
+            position: absolute;
+            top: 0;
+            right: 0.5rem;
+            z-index: 3;
+        }
+
+        &::after {
+            content: '';
+            background-color: $yellow;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            height: 75px;
+            width: 75px;
+            transform: rotate(10deg);
+
+            position: absolute;
+            bottom: 0.5rem;
+            left: -0.5rem;
+            z-index: -1;
+        }
+
+        img {
+            background-color: $white;
+            border: 3px dashed $blue;
+            border-radius: 50%;
+            @include stitchBorderShadow($white, 4px, darken($white, 45%));
+        }
+    }
+
+    td.right { 
+        width: unset!important;
+    }
+}
+
+/* CAVES & MOUNDS */
+@mixin stitchBorderShadowGrid($clr, $width: 3px, $shade: darken($white, 35%)) {
+    box-shadow: 0 0 0 $width $clr, rgba($shade, 0.25) 0px 10px 25px, rgba($shade, 0.3) 0px 5px 10px!important;
+}
+
+.col-md-4.col-xs-6:nth-child(even) .cave-grid, .col-md-3.col-xs-4:nth-child(even) .mound-grid {
+    background: darken($blue, 5%);
+    @include stitchBorderShadowGrid(darken($blue, 5%));
+
+    &:hover {
+        box-shadow: 0 0 0 3px darken($blue, 5%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+    }
+}
+
+.col-md-4.col-xs-6:nth-child(odd) .cave-grid, .col-md-3.col-xs-4:nth-child(odd) .mound-grid {
+    background: darken($red, 5%);
+    @include stitchBorderShadowGrid(darken($red, 5%));
+
+    &:hover {
+        box-shadow: 0 0 0 3px darken($red, 5%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+    }
+}
+
+.cave-grid, .mound-grid {
+    border: 2px dashed $white;
+    color: $white;
+    padding: 0.25rem;
+    transition: all 350ms ease;
+
+    &:hover {
+        transform: translate(0, -3px);
+    }
+
+    &:has(img[src$="unsortedlionsbanner.png"]), &:has(img[src$="nestingbanner.png"]), &:has(img[src$="prideoverviewbanner.png"]) {
+        font-family: $podkova;
+    }
+    
+    img {
+        border: 1px dashed rgba($white, 0.55);
+        border-radius: 0.25rem;
+
+        &[src$="unsortedlionsbanner.png"] {
+            content: url('https://cdn.discordapp.com/attachments/762830782267392000/1062910746553503864/stitchedbanner1.png') !important;
+        }
+
+        &[src$="nestingbanner.png"] {
+            content: url('https://cdn.discordapp.com/attachments/762830782267392000/1062910745991462973/stitchedbanner2.png') !important;
+        }
+
+        &[src$="prideoverviewbanner.png"] {
+            content: url('https://cdn.discordapp.com/attachments/762830782267392000/1062910745462984846/stitchedbanner3.png') !important;
+        }
+
+        &[src$="cavedefault.jpg"] {
+            content: url('https://cdn.discordapp.com/attachments/762830782267392000/1062906489909551174/cavegridstitched.png') !important;
+        }
+
+        &[src$="caveunused.jpg"] {
+            content: url('https://cdn.discordapp.com/attachments/762830782267392000/1062906489909551174/cavegridstitched.png') !important;
+            filter: saturate(0.15);
+        }
+    }
+}
+
+/* TRADITIONAL CAVE DISPLAY */
+#pride {
+    background-color: lighten($white, 5%);
+    border: 0;
+    border-radius: 0.25rem;
+    @include stitchBorderShadow(lighten($white, 5%), 3px);
+
+    th {
+        border-radius: 0.25rem 0.25rem 0 0;
+        border-bottom: 2px dashed $white!important;
+
+        a {
+            color: lighten($white, 5%)!important;
+            font-family: $podkova;
+        }
+    }
+
+    /* LV / Stats / Name Row */
+    .left.b {
+        color: $white;
+    }
+
+    .right, .right_cub {
+        background-color: lighten($white, 5%);
+    }
+}
+
+#pride:nth-child(even) {
+    th {
+        background-color: darken($blue, 10%)!important;
+    }
+
+    .left.b {
+        background-color: $blue;
+    }
+
+    .right_odd {
+        background-color: lighten($blue, 15%);
+    }
+
+    .bottom {
+        background-color: darken($blue, 10%);
+    }
+
+    a:not([href*="cave.php"]) {
+        color: darken($blue, 25%)!important;
+
+        &:hover {
+            color: darken($blue, 30%)!important;
+        }
+    }
+
+    input, button {
+        @include bgDashRecolor($blue);
+    }
+}
+
+#pride:nth-child(odd) {
+    th {
+        background-color: darken($red, 10%)!important;
+    }
+
+    .left.b {
+        background-color: $red;
+    }
+
+    .right_odd {
+        background-color: lighten($red, 15%);
+    }
+
+    .bottom {
+        background-color: darken($red, 10%);
+    }
+
+    input, button {
+        @include bgDashRecolor($red);
+    }
+}
+
+/* SPARRING */ 
+#sparring {
+    border: 0;
+    border-radius: 0.5rem;
+    @include stitchBorderShadow(lighten($white, 5%), 5px); 
+
+    tr > th {
+        background-color: darken($yellow, 15%);
+        border-bottom: 2px dashed $white!important;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    tr {
+        background-color: darken($yellow, 5%);
+        color: lighten($yellow, 35%);
+    }
+
+    .right_odd {
+        background-color: lighten($white, 5%);
+        color: $text;
+    }
+
+    input {
+        @include bgDashRecolor($yellow);
+    }
+}
+
+/* FEED ALL, PLAY ALL */
+.feature {
+    color: $text;
+    border: 2px dashed $white!important;
+    border-radius: 35px!important;
+
+    h3 {
+        color: $white!important;
+        font-family: $mitr;
+        text-shadow: none;
+    }
+}
+
+[action="territory.php"]:nth-child(odd) .feature {
+    background-color: darken($blue, 5%)!important;
+    @include stitchBorderShadowGrid(darken($blue, 5%));
+    transform: rotate(2deg);
+
+    input {
+        @include bgDashRecolor($blue);
+    }
+
+    @media (max-width: 768px) {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+[action="territory.php"]:nth-child(even) .feature {
+    background-color: darken($green, 5%)!important;
+    @include stitchBorderShadowGrid(darken($green, 5%));
+    transform: rotate(-2deg);
+
+    @media (max-width: 768px) {
+        margin-bottom: 2rem;
+    }
+}
+
+#attack, #allies, #clans {
+    background-color: lighten($white, 5%)!important;
+    border: 0;
+    border-radius: 0.5rem;
+    @include stitchBorderShadow(lighten($white, 5%), 5px);
+
+    th, .top {
+        border-bottom: 2px dashed $white!important;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .bottom {
+        border-radius: 0 0 0.5rem 0.5rem;
+        border-top: 2px dashed $white!important;
+
+        a {
+            color: $white!important;
+            text-decoration: none;
+        }
+    }
+}
+
+/* ATTACK THIS LION */
+#attack {    
+    th {
+        background-color: darken($red, 15%)!important;
+        box-shadow: 0 3px 0 darken($red, 15%);
+    }
+
+    input {
+        @include bgDashRecolor($red);
+    }
+
+    .bottom {
+        background-color: darken($red, 10%);
+        box-shadow: 0 -3px 0 darken($red, 10%);
+    }
+}
+
+/* ALLIES & CLANS */
+#allies {
+    .top {
+        background-color: darken($blue, 15%);
+        box-shadow: 0 3px 0 darken($blue, 15%);
+    }
+
+    .left {
+        background-color: darken($blue, 10%);
+        height: 3px!important;
+    }
+
+    .bottom {
+        background-color: darken($blue, 10%);
+        box-shadow: 0 -3px 0 darken($blue, 10%);
+    }
+
+    a {
+        color: darken($blue, 25%)!important;
+
+        &:hover {
+            color: darken($blue, 30%)!important;    
+        }
+    }
+}
+
+#clans {
+    .top {
+        background-color: darken($yellow, 15%);
+        box-shadow: 0 3px 0 darken($yellow, 15%);
+    }
+
+    .left {
+        background-color: darken($yellow, 10%);
+        height: 3px!important;
+    }
+
+    .bottom {
+        background-color: darken($yellow, 10%);
+    }
+
+    a {
+        color: darken($yellow, 25%)!important;
+
+        &:hover {
+            color: darken($yellow, 30%)!important;
+        }
+    }
+}
+
+/* DYNASTY ETC BUTTONS */
+.dynastylist {
+    .left {
+        border: 1px dashed $white;
+        transition: all 350ms ease;
+
+        &:hover {
+            transform: translate(0, -3px);
+        }
+
+        h3 {
+            color: $white!important;
+            font-family: $podkova;
+            text-shadow: none;
+        }
+
+        &:has(img[src$="ancestors.jpg"]) {
+            background-color: darken($green, 15%);
+            @include stitchBorderShadowGrid(darken($green, 15%));
+
+            &:hover {
+                box-shadow: 0 0 0 3px darken($green, 15%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+            }
+        }
+
+        &:has(img[src$="ancestorsfem.png"]) {
+            background-color: darken($blue, 15%);
+            @include stitchBorderShadowGrid(darken($blue, 15%));
+
+            &:hover {
+                box-shadow: 0 0 0 3px darken($blue, 15%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+            }
+        }
+
+        &:has(img[src$="achievements.jpg"]) {
+            background-color: darken($yellow, 15%);
+            @include stitchBorderShadowGrid(darken($yellow, 15%));
+
+            &:hover {
+                box-shadow: 0 0 0 3px darken($yellow, 15%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+            }
+        }
+
+        &:has(img[src$="banner.png"]) {
+            background-color: darken($red, 15%);
+            @include stitchBorderShadowGrid(darken($red, 15%));
+
+            &:hover {
+                box-shadow: 0 0 0 3px darken($red, 15%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        margin-top: 1rem;
+    }
+}
+
+/* THINNER BUTTONS */
+.col-md-3:not(.dynastylist) .left {
+    border: 1px dashed $white;
+    color: $white;
+    font-family: $mitr;
+    font-size: 0.9em;
+    font-weight: normal;
+    text-transform: lowercase;
+    transition: all 350ms ease;
+
+    &:hover {
+        transform: translate(0, -3px);
+    }
+}
+
+a:first-child .col-md-3:not(.dynastylist) .left {
+    background: darken($red, 15%);
+    @include stitchBorderShadowGrid(darken($red, 15%));
+
+    &:hover {
+        box-shadow: 0 0 0 3px darken($red, 15%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+    }
+}
+
+a:nth-child(2) .col-md-3:not(.dynastylist) .left {
+    background: darken($yellow, 15%);
+    @include stitchBorderShadowGrid(darken($yellow, 15%));
+
+    &:hover {
+        box-shadow: 0 0 0 3px darken($yellow, 15%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+    }
+}
+
+a:nth-child(3) .col-md-3:not(.dynastylist) .left {
+    background: darken($blue, 15%);
+    @include stitchBorderShadowGrid(darken($blue, 15%));
+
+    &:hover {
+        box-shadow: 0 0 0 3px darken($blue, 15%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+    }
+}
+
+a:last-child .col-md-3:not(.dynastylist) .left {
+    background: darken($green, 15%);
+    @include stitchBorderShadowGrid(darken($green, 15%));
+
+    &:hover {
+        box-shadow: 0 0 0 3px darken($green, 15%), rgba(darken($white, 35%), 0.25) 0px 20px 30px, rgba(darken($white, 35%), 0.3) 0px 5px 10px!important;
+    }
+}
+
+/* YOUR DETAILS */
+.table:not(#about, #player, #pride, #attack, #allies, #clans, #sparring) {
+    background-color: lighten($white, 5%);
+    border-radius: 0.5rem;
+    border: 0;
+    @include stitchBorderShadow(lighten($white, 5%));
+
+    th, .top {
+        background-image: repeating-linear-gradient(to right, $red 0%, $red 24%, $green 25%, $green 49%, $blue 50%, $blue 74%, $yellow 75%, $yellow 100%);
+        background-size: 50px;
+        border-radius: 0.5rem 0.5rem 0 0;
+        color: lighten($white, 5%);
+        font-family: $mitr;
+        letter-spacing: 1px;
+        text-transform: lowercase;
+        text-shadow:
+            -1px -1px 0 darken($red, 15%),  
+            1px -1px 0 darken($red, 15%),
+            -1px 1px 0 darken($red, 15%),
+            1px 1px 0 darken($red, 15%);
+
+        .progress {
+            font-family: $mulish!important;
+            letter-spacing: 0;
+            text-shadow: none;
+        }
+
+        a {
+            color: lighten($white, 5%)!important;
+        }
+    }
+
+    .bottom {
+        background-image: repeating-linear-gradient(to right, $red 0%, $red 24%, $green 25%, $green 49%, $blue 50%, $blue 74%, $yellow 75%, $yellow 100%);
+        background-size: 50px;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    input, textarea {
+        background-color: $white;
+        border: 1px dotted $blue;
+    }
+
+    tr {
+        .b, .left {color: $white;}
+
+        &:nth-child(1) .b, &:nth-child(5) .b, &:nth-child(even) .left:not(.b) {
+            background-color: darken($red, 10%);
+        }
+
+        &:nth-child(2) .b, &:nth-child(6) .b, &:nth-child(odd) .left:not(.b) {
+            background-color: darken($yellow, 10%);
+        }
+
+        &:nth-child(3) .b, &:nth-child(7) .b {
+            background-color: darken($green, 10%);
+        }
+
+        &:nth-child(4) .b {
+            background-color: darken($blue, 10%);
+        }
+    }
+} 
+
+#editdetailspanel {
+    tr:not(:last-child, :nth-child(7)) > .left.b { border-bottom: 1px dashed $white; }
+}
+
+/* ACCOUNT OPTIONS */
+#accountoptionspanel {
+    margin-bottom: 2rem;
+
+    .left {
+        background-color: darken($red, 10%);
+
+        a { 
+            background-color: transparent;
+            color: $white!important;
+        }
+    }
+
+    .col-md-3 {
+        .item {
+            background: $white;
+            border: 0;
+
+            &-header { color: $white; }
+        }
+
+        &:nth-child(1), &:nth-child(4), &:nth-child(7), &:nth-child(10), &:nth-child(13), &:nth-child(16) {
+            .item-header { background-color: darken($green, 10%); }
+        }
+
+        &:nth-child(2), &:nth-child(5), &:nth-child(8), &:nth-child(11), &:nth-child(14) {
+            .item-header { background-color: darken($blue, 10%); }
+        }
+
+        &:nth-child(3), &:nth-child(6), &:nth-child(9), &:nth-child(12), &:nth-child(15) {
+            .item-header { background-color: darken($yellow, 10%); }
+        }
+    }
+}
+
+.slider {
+    background-color: $red!important;
+
+    &:before {
+        background-color: $white!important;
+    }
+}
+
+input {
+    &:checked+.slider {
+        background-color: $success!important;
+    }
+
+    &:focus+.slider {
+        box-shadow: 0 0 1px $success!important;
+    }
+}
+
+/* CHANGE PASSWORD */
+#changepasswordpanel {
+    tr:not(:nth-child(3)) .b { border-bottom: 1px dashed $white; }
+}
+
+/* FOOTER */
+.footer {
+    color: $text;
+    text-shadow: none;
+
+    a {
+        border-bottom: 0!important;
+        text-shadow: none;
+    }
+}
+
+/** DENS **/ 
+
+/* Top lion/cave image */
+.featured-lion {
+    background-color: darken($blue, 15%);
+    color: $white;
+    margin-bottom: 2rem;
+
+    div img {
+        max-width: 100%;
+        height: 500px!important;
+    }
+
+    /* Featured lion text */
+    .center {
+        font-family: $podkova;
+        padding-top: 0.75rem;
+
+        a {
+            color: lighten($blue, 5%)!important;
+            transition: letter-spacing 350ms ease;
+
+            &:hover {
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
+/** BEETLE MOUNDS **/ 
+
+/* Top links bar */
+.sub_menu {
+    background-color: darken($red, 15%);
+    border: 2px dashed $white;
+    @include stitchBorderShadowGrid(darken($red, 15%));
+    margin-bottom: 2rem;
+
+    a {
+        color: lighten($white, 5%)!important;
+    }
+
+    &_item_selected {
+        background-color: darken($red, 5%);
+        color: lighten($white, 5%)!important;
+    }
+}
+
+/* Beetle list */
+#beetles {
+    td.right_odd {
+        background-color: $white;
+    }
+}
+
+/** SHOPS **/
+
+/* "Owned by (username)" */
+.left[style$="margin-top: 10px;"] {
+    background-color: darken($red, 15%);
+    border: 2px dashed $white;
+    @include stitchBorderShadowGrid(darken($red, 15%));
+    color: lighten($white, 5%);
+
+    a {
+        color: lighten($red, 15%)!important;
+
+        &:hover {
+            color: lighten($red, 10%)!important;
+        }
+    }
+}
+
+/* Items */
+.item {
+    background-color: $white;
+    border-color: $blue;
+    border-style: dashed;
+
+    &-header, &-footer {
+        background-color: darken($blue, 10%);
+        color: lighten($white, 5%);
+    }
+
+    input {
+        color: $text;
+    }
+}
+
+/* Remove All Items button */
+button.button.bad {
+    @include bgDashRecolor($red);
+    border: 0;
+    text-shadow: none;
+
+    &:hover {
+        border: 0;
+        text-shadow: none;
+    }
+}
+
+/* CREDIT */
+.container.main::before {
+    content: 'CSS by #276513';
+    background-color: darken($blue, 10%);
+    border: 1px dashed $white;
+    @include stitchBorderShadowGrid(darken($blue, 10%));
+    color: lighten($white, 5%);
+    display: block;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    position: fixed;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    z-index: 5;
+}
