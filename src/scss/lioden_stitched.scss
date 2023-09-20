@@ -996,6 +996,11 @@ $alerts: ("success": $success, "warning": $warning, "danger": $danger);
     td.right { 
         width: unset!important;
     }
+
+    td.right_odd {
+        background-color: transparent!important;
+        padding-left: 2rem;
+    }
 }
 
 /* CAVES & MOUNDS */
@@ -1639,6 +1644,64 @@ button.button.bad {
     &:hover {
         border: 0;
         text-shadow: none;
+    }
+}
+
+/** BOXES **/
+
+.box {
+    background-color: lighten($white, 10%);
+    border: 2px dashed $blue;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 2.5rem;
+
+    @include stitchBorderShadowGrid(lighten($white, 10%));
+
+    &-header {
+        background-color: $blue;
+        border-radius: 22.5px 22.5px 0 0;
+        color: lighten($white, 10%);
+        font-family: $mitr;
+        font-size: 1.5em;
+    }
+
+    &-content {
+        padding: 0.75rem;
+        max-height: 300px;
+        overflow: auto;
+
+        &-wrapper {
+            padding: 0.75rem;
+        }
+    }
+
+    &-row {
+        @media (min-width: 992px) {
+            display: flex;
+        }
+
+        .col-md-4, .col-md-6 {
+            display: flex;
+        }
+
+        .col-md-4:nth-child(2) .box, .col-md-6:nth-child(2) .box {
+            border-color: $yellow;
+
+            &-header {
+                background-color: $yellow;
+            }
+        }
+
+        .col-md-4:nth-child(3) .box {
+            border-color: $red;
+
+            &-header {
+                background-color: $red;
+            }
+        }
     }
 }
 
