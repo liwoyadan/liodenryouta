@@ -5,10 +5,11 @@
 * Browsers: last 4 version
 */
 
-/** SLEEK & STRIPED (GREEN) by Ryouta#276513 **/
-/* FONT IMPORTS & SVGs */
+/** SLEEK & STRIPED (BLUE) by Ryouta#276513 **/
+/* FONT IMPORTS */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Quattrocento&family=Telex&display=swap");
 /* VARIABLES */
+/** LAYOUT **/
 body {
   background: -o-repeating-linear-gradient(45deg, #a5bf97, #a5bf97 9.5px, #f2f3ec 9.5px, #f2f3ec 47.5px) !important;
   background: repeating-linear-gradient(45deg, #a5bf97, #a5bf97 9.5px, #f2f3ec 9.5px, #f2f3ec 47.5px) !important;
@@ -16,7 +17,7 @@ body {
   font-family: "Telex", sans-serif;
 }
 
-/* SELECTION */
+/* TEXT SELECTION */
 ::-moz-selection {
   background: #638552;
   color: #f5fcf4;
@@ -37,11 +38,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #97b588;
+  background-color: #97b588;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #638552;
+  background-color: #638552;
   border-radius: 3px;
 }
 
@@ -51,8 +52,9 @@ body {
 }
 
 /** MAIN CONTENT **/
+/* Welcome back, [username] */
 .topbar {
-  background: #577548;
+  background-color: #577548;
   border: none;
   border-top: none;
   color: #f5fcf4;
@@ -64,14 +66,17 @@ body {
   color: #a5bf97 !important;
 }
 
+/* Top navigation bar */
 .navbar {
-  background: #638552;
+  background-color: #638552;
   border: 0;
   min-height: 0;
   /* LOGO REPLACER */
   /* .navbar-brand>img {
       content: url('IMAGE URL HERE');
   } */
+  /* Mobile navigation toggle button */
+  /* Mobile navigation divider */
 }
 .navbar li {
   background-color: inherit;
@@ -84,19 +89,22 @@ body {
   transition: all 150ms ease;
 }
 .navbar li a:hover {
+  background-color: #405635 !important;
   color: #7ba268 !important;
-  background: #405635 !important;
 }
-.navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus {
-  background: #405635 !important;
+.navbar-toggle {
+  border-color: #405635 !important;
 }
-.navbar .navbar-collapse {
+.navbar-toggle:hover, .navbar-toggle:focus {
+  background-color: #405635 !important;
+}
+.navbar-collapse {
   border-color: #405635;
 }
 
 /* RIGHT COLUMN (and overall container) */
 .main {
-  background: #d2d6bc;
+  background-color: #d2d6bc;
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -104,7 +112,7 @@ body {
 
 /* LEFT COLUMN */
 .col-md-9 {
-  background: #dde0cc;
+  background-color: #dde0cc;
 }
 
 /* HEADINGS */
@@ -140,7 +148,8 @@ a:hover, a:link:hover, a:visited:hover {
 
 /* BREADCRUMB */
 .breadcrumb {
-  background: #97b588;
+  background-color: #97b588;
+  /* "Den" in Home / Den */
 }
 .breadcrumb .active {
   color: #34462b;
@@ -148,7 +157,7 @@ a:hover, a:link:hover, a:visited:hover {
 
 /* ALERTS */
 .alert.alert-success {
-  background: #99a858;
+  background-color: #99a858;
   border: 1px solid #909e52;
   color: #f5fcf4;
 }
@@ -157,7 +166,7 @@ a:hover, a:link:hover, a:visited:hover {
   font-weight: bold;
 }
 .alert.alert-warning {
-  background: #ccab35;
+  background-color: #ccab35;
   border: 1px solid #c1a131;
   color: #f5fcf4;
 }
@@ -166,7 +175,7 @@ a:hover, a:link:hover, a:visited:hover {
   font-weight: bold;
 }
 .alert.alert-danger {
-  background: #b86754;
+  background-color: #b86754;
   border: 1px solid #b35e4a;
   color: #f5fcf4;
 }
@@ -196,7 +205,7 @@ input[type=submit]:hover, input[name=togglechat]:hover, button[type=submit]:hove
 
 /* SELECT DROPDOWNS */
 select {
-  background: #b3b98d;
+  background-color: #b3b98d;
   border: 0;
   color: #283621;
 }
@@ -204,10 +213,21 @@ select option {
   color: #283621;
 }
 
+input[type=text], textarea {
+  background-color: #b3b98d;
+  border: 0;
+  color: #283621;
+}
+
+/* When typing in textbox */
+input:focus-visible, textarea:focus-visible {
+  outline: 1px solid #283621;
+}
+
 /** RIGHT COLUMN CONTENT **/
 /* ENERGY BARS, ACHIEVEMENTS, & BOOKMARKS */
 .panel {
-  background: #e8eadc !important;
+  background-color: #e8eadc !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   border: 0 !important;
@@ -216,23 +236,20 @@ select option {
 
 /* STAT BARS */
 .progress {
-  background: #f2f3ec;
+  background-color: #f2f3ec;
 }
 .progress .progress-bar {
   /* IMPRESSION */
-  background: #7197ad;
-  /* ENERGY */
-  /* HUNGER */
-  /* EXP */
-}
-.progress .progress-bar.progress-bar-warning {
-  background: #ccab35;
-}
-.progress .progress-bar.progress-bar-danger {
-  background: #b86754;
+  background-color: #7197ad;
 }
 .progress .progress-bar.progress-bar-success {
-  background: #99a858;
+  background-color: #99a858;
+}
+.progress .progress-bar.progress-bar-warning {
+  background-color: #ccab35;
+}
+.progress .progress-bar.progress-bar-danger {
+  background-color: #b86754;
 }
 .progress div {
   color: #283621;
@@ -243,8 +260,15 @@ select option {
   background: #d2d6bc !important;
 }
 
+.s-chat-message {
+  /* Pinned message */
+  /* Moderator message */
+  /* Message timestamps */
+  /* Giveaway channel - claim list button on messages */
+  /* Selected message */
+}
 .s-chat-message:nth-child(even) {
-  background: #7ba268;
+  background-color: #7ba268;
   border: 0;
   border-left: 6px solid transparent;
 }
@@ -252,19 +276,19 @@ select option {
   color: #34462b !important;
 }
 .s-chat-message:nth-child(odd) {
-  background: #f2f3ec;
+  background-color: #f2f3ec;
   border: 0;
   border-left: 6px solid transparent;
 }
 .s-chat-message__pinned {
-  background: #405635 !important;
+  background-color: #405635 !important;
   color: #f5fcf4 !important;
 }
 .s-chat-message__pinned a {
   color: #7ba268 !important;
 }
 .s-chat-message__mod {
-  background: #99a858 !important;
+  background-color: #99a858 !important;
   border: 0;
   border-left: 6px solid transparent;
   color: #3e4423;
@@ -272,12 +296,48 @@ select option {
 .s-chat-message_timestamp {
   color: rgba(40, 54, 33, 0.65);
 }
+.s-chat-message_claim {
+  background-color: #dde0cc;
+  border-bottom: 0;
+  color: #283621;
+}
+.s-chat-message.hasContext {
+  background-color: #577548 !important;
+  border-left-color: #638552 !important;
+  color: #f5fcf4;
+}
 .s-chat-message a {
   color: rgba(40, 54, 33, 0.8) !important;
 }
 
+/* When there's no pinned message */
+#chatMessagePinned {
+  background-color: #638552;
+  border-bottom-color: #405635;
+  color: #f5fcf4;
+}
+
+/* Giveaway channel - claim list */
+#modalClaimList {
+  background-color: #638552;
+  border: 0;
+  color: #f5fcf4;
+}
+#modalClaimList h3 {
+  background-color: #577548;
+  color: #f5fcf4 !important;
+}
+#modalClaimList a {
+  color: #f5fcf4 !important;
+}
+
+#modalClaimList button.close {
+  color: #f5fcf4;
+}
+
+/* Channel list */
 #label_currentChannel, #fraChatChannelMenu {
-  background: #b3b98d !important;
+  background-color: #b3b98d !important;
   border: 0 !important;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -286,12 +346,13 @@ select option {
   color: #283621 !important;
 }
 #label_currentChannel .channelSwitcher:hover, #fraChatChannelMenu .channelSwitcher:hover {
-  background: #c8cdac !important;
+  background-color: #c8cdac !important;
 }
 #label_currentChannel .channelSwitcher.active, #fraChatChannelMenu .channelSwitcher.active {
-  background: #9ea66d !important;
+  background-color: #9ea66d !important;
 }
 
+/* Chatbox buttons for settings, refresh, etc */
 #fraChatSettings, #btnLoadNewMessages, .s-chat-message_menu {
   -webkit-filter: opacity(0.65);
           filter: opacity(0.65);
@@ -305,31 +366,36 @@ select option {
   border: 0;
 }
 
+/* Chatbox text input */
 #txtChatInput {
-  background: #b3b98d;
+  background-color: #b3b98d;
   border: 0 !important;
   color: #283621;
 }
 
 /** PROFILE/LEFT COLUMN CONTENT **/
-/* PRIDE INFOBOX */
+/* PRIDE / KING INFOBOX */
 #about {
-  background: #cdd2b4;
+  background-color: #cdd2b4;
   border: 0;
+  /* Box header */
+  /* this just centers the king icon vertically next to the info */
+  /* King icon */
+  /* some mobile margins... */
+  /* Info table */
+  /* Box footer */
 }
 #about .top.center {
-  background: #34462b;
+  background-color: #34462b;
   border: 0;
   font-family: "Comfortaa", cursive;
+  /* King link */
 }
 #about .top.center a {
   color: #89ac78 !important;
 }
 #about .top.center a:hover {
   color: #97b588 !important;
-}
-#about tr:nth-child(2) > td:first-child {
-  width: unset !important;
 }
 #about tr.right {
   -webkit-box-align: center;
@@ -340,17 +406,28 @@ select option {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  /* i probably could've done this with :has() but whatever i wrote it with :not() and it works */
+}
+#about tr.right td:not(.right):not([width="3"]) {
+  width: unset !important;
 }
 #about #lion_image div {
-  border: 3px dashed #89ac78;
+  border: 3px solid #89ac78;
   border-radius: 50%;
 }
+#about .inner-table {
+  border-spacing: 1px 3px;
+}
+#about .inner-table.auto {
+  /* Left side - Level:, Stats:, etc */
+  /* Right side - the values */
+}
 #about .inner-table.auto .left {
-  background: #4c653f;
+  background-color: #4c653f;
   color: #b2c9a7;
 }
 #about .inner-table.auto .right {
-  background: #577548;
+  background-color: #577548;
   color: #f5fcf4;
 }
 #about .inner-table.auto .right a {
@@ -360,7 +437,8 @@ select option {
   color: #b2c9a7 !important;
 }
 #about .bottom {
-  background: #405635;
+  background-color: #405635;
+  /* "There are # lions with mutations in X's pride." */
 }
 #about .bottom a {
   color: #f5fcf4 !important;
@@ -369,9 +447,14 @@ select option {
 
 /* PLAYER INFOBOX */
 #player {
-  background: #cdd2b4;
+  background-color: #cdd2b4;
   border: 0 !important;
   border-collapse: separate;
+  /* vertically centering player icon */
+  /* Box header */
+  /* Player username */
+  /* Giftbox image */
+  /* Player Icon */
 }
 #player tr.right {
   -webkit-box-align: center;
@@ -384,7 +467,8 @@ select option {
       justify-content: space-around;
 }
 #player .top {
-  background: #34462b;
+  background-color: #34462b;
+  /* Player ID # */
 }
 #player .top .floatright {
   color: #97b588;
@@ -392,16 +476,21 @@ select option {
 #player div.center.xlarge {
   color: #577548;
 }
+#player .inner-table.auto {
+  /* Joined:, Last Active: */
+  /* Joined & LAst Active Date/Times */
+}
 #player .inner-table.auto .left {
-  background: #4c653f;
+  background-color: #4c653f;
   color: #b2c9a7;
 }
 #player .inner-table.auto .right {
-  background: #577548;
+  background-color: #577548;
   color: #f5fcf4;
 }
 #player p.center.xlarge {
   color: #7ba268;
+  /* Links */
 }
 #player p.center.xlarge a {
   color: #638552;
@@ -413,16 +502,19 @@ select option {
   border: 0;
 }
 #player .right img {
-  border: 3px dashed #89ac78;
+  border: 3px solid #89ac78;
   border-radius: 10%;
 }
 #player td.right {
   width: unset !important;
 }
+#player td.right_odd {
+  background-color: rgba(99, 133, 82, 0.15) !important;
+}
 
 /* CAVES & MOUNDS */
 .cave-grid, .mound-grid {
-  background: #405635;
+  background-color: #405635;
   border: 0;
   color: #c0d3b7;
   font-weight: normal;
@@ -471,23 +563,28 @@ select option {
 
 /* TRADITIONAL CAVE DISPLAY */
 #pride {
-  border-left: 1px dashed #577548;
-  border-right: 1px dashed #577548;
+  border-left: 1px solid #577548;
+  border-right: 1px solid #577548;
   border-bottom: 1px solid #577548;
   /* LV / Stats / Name Row */
+  /* Heat Countdown */
 }
 #pride th > a {
   color: #f5fcf4 !important;
 }
 #pride .left.b {
-  background: #638552;
+  background-color: #638552;
   color: #c0d3b7;
 }
 #pride .right_odd {
-  background: #c8cdac;
+  background-color: #c8cdac;
+}
+#pride .badge {
+  background-color: #577548;
+  color: #c0d3b7;
 }
 #pride .bottom {
-  background: #405635;
+  background-color: #405635;
 }
 
 /* SPARRING */
@@ -495,20 +592,20 @@ select option {
   border: 0;
 }
 #sparring tr > th {
-  background: #405635;
+  background-color: #405635;
 }
 #sparring tr {
-  background: #577548;
+  background-color: #577548;
   color: #c0d3b7;
 }
 #sparring .right_odd {
-  background: #c8cdac;
+  background-color: #c8cdac;
   color: #283621;
 }
 
 /* FEED ALL, PLAY ALL */
 .feature {
-  background: #577548 !important;
+  background-color: #577548 !important;
   color: #c0d3b7;
   border: 0 !important;
   border-radius: 3px !important;
@@ -524,7 +621,7 @@ select option {
   } */
 }
 .dynastylist .left {
-  background: #405635;
+  background-color: #405635;
   border: 0;
 }
 .dynastylist .left h3 {
@@ -533,22 +630,22 @@ select option {
 
 /* THINNER BUTTONS */
 .col-md-3 .left {
-  background: #405635;
+  background-color: #405635;
   border: 0;
   color: #c0d3b7;
 }
 
 /* ATTACK THIS LION */
 #attack {
-  background: #cdd2b4;
+  background-color: #cdd2b4;
   border: 0;
 }
 #attack th {
-  background: #34462b;
+  background-color: #34462b;
   border: 0;
 }
 #attack .bottom {
-  background: #405635;
+  background-color: #405635;
 }
 #attack .bottom a {
   color: #f5fcf4 !important;
@@ -557,19 +654,19 @@ select option {
 
 /* ALLIES & CLANS */
 #allies, #clans {
-  background: #cdd2b4;
+  background-color: #cdd2b4;
   border: 0;
 }
 #allies .top, #clans .top {
-  background: #34462b;
+  background-color: #34462b;
   border: 0;
 }
 #allies .left, #clans .left {
-  background: #4c653f;
+  background-color: #4c653f;
   height: 3px !important;
 }
 #allies .bottom, #clans .bottom {
-  background: #405635;
+  background-color: #405635;
 }
 #allies .bottom a, #clans .bottom a {
   color: #f5fcf4 !important;
@@ -578,57 +675,53 @@ select option {
 
 /* YOUR DETAILS */
 .table[width="500"] {
+  background-color: #cdd2b4;
   border: 0;
 }
-.table[width="500"] tbody > tr > th {
-  background: #405635 !important;
+.table[width="500"] tbody > tr > th, .table[width="500"] td.top {
+  background-color: #34462b !important;
   border: 0 !important;
   color: #f5fcf4;
 }
 
 #editdetailspanel tr:not(:last-child, :nth-child(7)) > .left.b {
-  border-bottom: 1px dashed #cdd2b4;
+  border-bottom: 1px solid #cdd2b4;
 }
 #editdetailspanel tr .left.b {
-  background: #4c653f;
+  background-color: #4c653f;
   color: #b2c9a7;
 }
 #editdetailspanel tr .right {
-  background: #cdd2b4;
-}
-#editdetailspanel tr .right input[type=text], #editdetailspanel tr .right textarea {
-  background: #b3b98d;
-  border: 0;
-  color: #283621;
+  background-color: #cdd2b4;
 }
 #editdetailspanel a {
   color: #638552;
 }
 #editdetailspanel .bottom {
-  background: #577548;
+  background-color: #577548;
 }
 
 /* ACCOUNT OPTIONS */
 #accountoptionspanel .left {
-  background: #4c653f;
+  background-color: #4c653f;
 }
 #accountoptionspanel .left a {
-  background: #4c653f;
+  background-color: #4c653f;
   color: #b2c9a7 !important;
 }
 #accountoptionspanel .right {
-  background: #cdd2b4;
+  background-color: #cdd2b4;
 }
 #accountoptionspanel .item {
-  background: #b3b98d;
+  background-color: #b3b98d;
   border: 0;
 }
 #accountoptionspanel .item-header {
-  background: #4c653f;
+  background-color: #4c653f;
   color: #b2c9a7;
 }
 #accountoptionspanel .bottom {
-  background: #577548;
+  background-color: #577548;
 }
 
 .slider {
@@ -648,19 +741,19 @@ input:focus + .slider {
 
 /* CHANGE PASSWORD */
 #changepasswordpanel .left.b {
-  background: #4c653f;
+  background-color: #4c653f;
   color: #b2c9a7;
 }
 #changepasswordpanel .right {
-  background: #cdd2b4;
+  background-color: #cdd2b4;
 }
 #changepasswordpanel .right input[type=password] {
-  background: #b3b98d;
+  background-color: #b3b98d;
   border: 0;
   color: #283621;
 }
 #changepasswordpanel .bottom {
-  background: #577548;
+  background-color: #577548;
 }
 
 /* FOOTER */
@@ -671,4 +764,147 @@ input:focus + .slider {
 .footer a {
   border-bottom: 0 !important;
   text-shadow: none;
+}
+
+/** DENS **/
+/* Top lion/cave image */
+.featured-lion {
+  background-color: #638552;
+  color: #f5fcf4;
+  margin-bottom: 2rem;
+  /* Featured lion text */
+}
+.featured-lion div img {
+  max-width: 100%;
+  height: 500px !important;
+}
+.featured-lion .center {
+  font-family: "Quattrocento", serif;
+  padding-top: 0.75rem;
+}
+.featured-lion .center a {
+  color: #283621 !important;
+}
+
+/* Cave Stats & Cave Settings */
+.table.auto {
+  border: 0;
+  /* Box header */
+}
+.table.auto td.top, .table.auto th[colspan="2"] {
+  background-color: #405635;
+  color: #f5fcf4;
+}
+.table.auto td {
+  background-color: #cdd2b4;
+}
+.table.auto td.left {
+  background-color: #4c653f;
+  border-bottom: 1px solid #cdd2b4;
+  color: #b2c9a7;
+}
+
+/** BEETLE MOUNDS **/
+/* Top links bar */
+.sub_menu {
+  background-color: #405635;
+  border-radius: 10px;
+}
+.sub_menu a {
+  color: #638552 !important;
+}
+.sub_menu_item_selected {
+  background-color: #577548;
+}
+
+/* Beetle list */
+#beetles {
+  border: 1px solid #405635;
+}
+#beetles td.left {
+  background-color: #4c653f;
+  color: #b2c9a7;
+}
+#beetles td.right_odd {
+  background-color: #c8cdac;
+}
+
+/** SHOPS **/
+/* "Owned by (username)" */
+.left[style$="margin-top: 10px;"] {
+  background-color: #97b588;
+}
+
+/* Headers */
+.table th {
+  background-color: #405635;
+  color: #f5fcf4;
+}
+
+/* Items */
+.item {
+  background-color: rgba(245, 252, 244, 0.35);
+  border-color: #638552;
+}
+.item-header, .item-footer {
+  background-color: #577548;
+  color: #f5fcf4;
+}
+
+/** BOXES **/
+.box {
+  background-color: #e8eadc;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-bottom: 2.5rem;
+}
+.box-header {
+  background-color: #638552;
+  border-radius: 3px 3px 0 0;
+  color: #f5fcf4;
+  font-family: "Quattrocento", serif;
+  font-size: 1.5em;
+}
+.box-content {
+  padding: 0.75rem;
+  max-height: 300px;
+  overflow: auto;
+}
+.box-content-wrapper {
+  padding: 0.75rem;
+}
+@media (min-width: 992px) {
+  .box-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.box-row .col-md-4, .box-row .col-md-6 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* CREDIT */
+.container.main::before {
+  content: "CSS by #276513";
+  background-color: #638552;
+  color: #f5fcf4;
+  display: block;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  position: fixed;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 5;
 }

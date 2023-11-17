@@ -539,6 +539,10 @@ input:focus-visible, textarea:focus-visible {
     td.right { 
         width: unset!important;
     }
+
+    td.right_odd {
+        background-color: rgba($primary, 0.15)!important;
+    }
 }
 
 /* CAVES & MOUNDS */
@@ -937,6 +941,45 @@ input {
     &-header, &-footer {
         background-color: darken($primary, 5%);
         color: $white;
+    }
+}
+
+/** BOXES **/
+
+.box {
+    background-color: lighten($secondary, 5%);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 2.5rem;
+
+    &-header {
+        background-color: $primary;
+        border-radius: 3px 3px 0 0;
+        color: $white;
+        font-family: $quattrocento;
+        font-size: 1.5em;
+    }
+
+    &-content {
+        padding: 0.75rem;
+        max-height: 300px;
+        overflow: auto;
+
+        &-wrapper {
+            padding: 0.75rem;
+        }
+    }
+
+    &-row {
+        @media (min-width: 992px) {
+            display: flex;
+        }
+
+        .col-md-4, .col-md-6 {
+            display: flex;
+        }
     }
 }
 
