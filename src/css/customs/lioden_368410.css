@@ -1,0 +1,760 @@
+/** CUSTOM FOR #368410 by Ryouta#276513 **/
+/* FONT IMPORTS */
+@import url("https://fonts.bunny.net/css?family=fondamento:400,400i|lora:500,500i|martel:400");
+/* VARIABLES */
+/* BODY */
+body {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_checkerboardcross.webp") repeat center center;
+  color: #313030;
+  font-family: "Martel", serif;
+}
+
+/* SELECTION */
+::selection {
+  background: #6d6a6a;
+  color: #acaaaa;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #535151;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #393838;
+}
+
+/* LAYOUT */
+.topbar {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-radius: 0 0 2.5rem 2.5rem;
+  box-shadow: 0px 1px 7px 2px rgba(109, 106, 106, 0.35);
+  color: #313030;
+}
+.topbar .welcomeback > a, .topbar .toplinks > li > a {
+  color: #917588 !important;
+}
+.topbar .welcomeback > a:hover, .topbar .toplinks > li > a:hover {
+  color: #675260 !important;
+}
+.topbar img {
+  filter: grayscale(75%);
+}
+@media (max-width: 768px) {
+  .topbar {
+    margin-bottom: 1rem;
+  }
+}
+
+.container.main {
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(2px);
+  border-radius: 2.5rem;
+  box-shadow: 4px 4px 7px rgba(109, 106, 106, 0.35), -4px -4px 7px #fff;
+}
+
+.navbar {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-top: 1px solid rgba(109, 106, 106, 0.15);
+  border-bottom: 1px solid rgba(109, 106, 106, 0.15);
+  border-radius: 2.5rem 2.5rem 0 0 !important;
+  min-height: 0;
+  /* LOGO */
+}
+.navbar .navbar-brand > img {
+  filter: grayscale(100%) brightness(1.5);
+}
+.navbar li {
+  background-color: transparent;
+  position: relative;
+}
+.navbar li::before {
+  content: "";
+  background-color: rgba(145, 117, 136, 0.55);
+  height: 1px;
+  width: 0%;
+  transition: width 350ms ease;
+  position: absolute;
+  left: 20%;
+  bottom: 1rem;
+}
+.navbar li:hover::before {
+  width: 60%;
+}
+.navbar li a {
+  background-color: #6d6a6a;
+  background-clip: text;
+  color: transparent !important;
+  font-family: "Lora", serif;
+  font-weight: bold;
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.55);
+  transition: all 350ms ease;
+}
+.navbar li a:hover {
+  background-color: #917588 !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+.navbar-toggle {
+  border-color: rgba(109, 106, 106, 0.35) !important;
+}
+.navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus {
+  background: rgba(109, 106, 106, 0.15) !important;
+}
+.navbar .navbar-collapse {
+  border-color: rgba(109, 106, 106, 0.35);
+}
+
+/* CONTENT ROW */
+.main .row:nth-child(2) {
+  border-left: 1px solid rgba(109, 106, 106, 0.1);
+  border-right: 1px solid rgba(109, 106, 106, 0.1);
+}
+@media (min-width: 768px) {
+  .main .row:nth-child(2) {
+    border-radius: 0 0 2.5rem 2.5rem;
+  }
+}
+
+/* LEFT COLUMN */
+.col-md-9 {
+  background-color: transparent;
+}
+
+/* RIGHT COLUMN */
+.sidebar {
+  background: linear-gradient(to bottom, #fff 0%, transparent 100%);
+}
+
+/* HEADINGS */
+h1 {
+  background-clip: text;
+  background-color: #6d6a6a;
+  color: transparent;
+  font-family: "Fondamento", handwriting;
+  font-size: 4rem;
+  text-align: center;
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.55);
+}
+
+h2 {
+  color: #6d6a6a;
+  font-family: "Fondamento", handwriting;
+}
+
+h3 {
+  color: #6d6a6a !important;
+  font-family: "Lora", serif;
+}
+
+h4 {
+  color: #6d6a6a !important;
+  font-family: "Lora", serif;
+}
+
+/* LINKS */
+a, a:link, a:visited {
+  color: #917588 !important;
+}
+a:hover, a:link:hover, a:visited:hover {
+  color: #675260 !important;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+  background-color: #e7e7e7;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+.breadcrumb .active {
+  color: #313030;
+}
+
+/* ALERTS */
+.alert.alert-success {
+  background-color: rgba(155, 158, 114, 0.35);
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 7px 1px rgba(155, 158, 114, 0.2);
+  color: #717450;
+}
+.alert.alert-success a {
+  color: #54563b !important;
+  font-weight: bold;
+}
+.alert.alert-success a:hover {
+  color: #717450 !important;
+}
+.alert.alert-warning {
+  background-color: rgba(189, 146, 89, 0.35);
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 7px 1px rgba(189, 146, 89, 0.2);
+  color: #906b39;
+}
+.alert.alert-warning a {
+  color: #6c502b !important;
+  font-weight: bold;
+}
+.alert.alert-warning a:hover {
+  color: #906b39 !important;
+}
+.alert.alert-danger {
+  background-color: rgba(161, 92, 79, 0.35);
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 7px 1px rgba(161, 92, 79, 0.2);
+  color: #6e3f36;
+}
+.alert.alert-danger a {
+  color: #4b2b25 !important;
+  font-weight: bold;
+}
+.alert.alert-danger a:hover {
+  color: #6e3f36 !important;
+}
+
+/* INPUT BUTTONS */
+input[type=submit], input[name=togglechat], button[type=submit], #btnChatSend, .button.gold {
+  background: rgba(109, 106, 106, 0.75) !important;
+  border: 1px solid rgba(109, 106, 106, 0.35) !important;
+  border-radius: 1rem;
+  box-shadow: none !important;
+  color: #fff !important;
+  text-shadow: none !important;
+  transition: all 350ms ease;
+}
+input[type=submit]:hover, input[name=togglechat]:hover, button[type=submit]:hover, #btnChatSend:hover, .button.gold:hover {
+  background: rgba(109, 106, 106, 0.55) !important;
+  border: 1px solid rgba(109, 106, 106, 0.35);
+  border-radius: 1rem;
+  text-shadow: none;
+}
+
+/* SELECT DROPDOWNS */
+select {
+  background-color: rgba(109, 106, 106, 0.75);
+  border: 0px;
+  border-radius: 2.5rem;
+  color: #fff !important;
+}
+select option {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* RIGHT COLUMN CONTENT */
+.panel {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  color: #313030 !important;
+  position: relative;
+  z-index: 1;
+}
+.panel::before {
+  content: "";
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-radius: 2.5rem;
+  opacity: 0.65;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.panel img {
+  filter: grayscale(75%);
+}
+
+/* STAT BARS */
+.progress {
+  background: #dadada;
+}
+.progress .progress-bar {
+  /* IMPRESSION */
+  background: rgba(124, 137, 139, 0.35);
+  /* ENERGY */
+  /* HUNGER */
+  /* EXP */
+}
+.progress .progress-bar.progress-bar-warning {
+  background: rgba(189, 146, 89, 0.35);
+}
+.progress .progress-bar.progress-bar-danger {
+  background: rgba(161, 92, 79, 0.35);
+}
+.progress .progress-bar.progress-bar-success {
+  background: rgba(155, 158, 114, 0.35);
+}
+.progress div {
+  color: #313030;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-top: 2px;
+}
+
+/* COMMENT BOX */
+#commentBox {
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(109, 106, 106, 0.35) !important;
+  color: rgba(49, 48, 48, 0.75);
+}
+#commentBox .commentTag {
+  filter: grayscale(75%);
+}
+#commentBox .bad {
+  background: rgba(109, 106, 106, 0.75) !important;
+  border: 1px solid rgba(109, 106, 106, 0.35) !important;
+  border-radius: 1rem;
+  box-shadow: none !important;
+  color: #fff !important;
+  padding-top: 0.5rem !important;
+  text-shadow: none !important;
+  transition: all 350ms ease;
+}
+#commentBox .bad:hover {
+  background: rgba(109, 106, 106, 0.55) !important;
+  border: 1px solid rgba(109, 106, 106, 0.35);
+  border-radius: 1rem;
+  text-shadow: none;
+}
+
+.comment:nth-child(even) {
+  background-color: #e7e7e7 !important;
+  color: #313030;
+}
+
+#comment {
+  border: 1px solid rgba(109, 106, 106, 0.35) !important;
+}
+
+/* CHATBOX */
+.nolayout body {
+  background-color: transparent !important;
+}
+
+.s-chat-message a {
+  color: #917588 !important;
+}
+.s-chat-message a:hover {
+  color: #675260 !important;
+}
+.s-chat-message:nth-child(even) {
+  background: #e7e7e7;
+  border: 0;
+  border-left: 6px solid transparent;
+}
+.s-chat-message:nth-child(odd) {
+  background: #fff;
+  border: 0;
+  border-left: 6px solid transparent;
+}
+.s-chat-message__pinned {
+  background: #6d6a6a !important;
+  color: #fff !important;
+}
+.s-chat-message__pinned a {
+  color: #b3a0ad !important;
+}
+.s-chat-message__pinned a:hover {
+  color: #917588 !important;
+}
+.s-chat-message__mod {
+  background: rgba(155, 158, 114, 0.35) !important;
+  border: 0;
+  border-left: 6px solid transparent;
+  color: #363726;
+}
+.s-chat-message_timestamp {
+  color: rgba(49, 48, 48, 0.45);
+}
+.s-chat-message_claim {
+  background-color: #917588;
+  border-bottom: 0;
+  color: #e7e7e7;
+}
+.s-chat-message.hasContext {
+  background-color: #e7e7e7 !important;
+  border-left-color: #605d5d !important;
+}
+
+#chatMessagePinned.s-chat-message__pinned {
+  border-bottom-color: #6d6a6a !important;
+}
+
+#modalClaimList {
+  background-color: #e7e7e7;
+  border: 0;
+}
+#modalClaimList h3 {
+  background-color: #917588;
+  color: #e7e7e7 !important;
+}
+
+#label_currentChannel, #fraChatChannelMenu {
+  background-color: #6d6a6a !important;
+  border: 1px solid #e7e7e7 !important;
+  box-shadow: none;
+  color: #fff;
+}
+#label_currentChannel .channelSwitcher, #fraChatChannelMenu .channelSwitcher {
+  color: #313030 !important;
+}
+#label_currentChannel .channelSwitcher:hover, #fraChatChannelMenu .channelSwitcher:hover {
+  background-color: #878383 !important;
+}
+#label_currentChannel .channelSwitcher.active, #fraChatChannelMenu .channelSwitcher.active {
+  background-color: #917588 !important;
+  color: #e7e7e7 !important;
+}
+
+#fraChatSettings, #btnLoadNewMessages, .s-chat-message_menu {
+  filter: opacity(0.65);
+}
+#fraChatSettings:hover, #btnLoadNewMessages:hover, .s-chat-message_menu:hover {
+  filter: opacity(0.85);
+}
+
+#txtChatContainer #lblCharacterCounter {
+  color: #313030;
+}
+
+#chatMessageContainer {
+  border: 1px solid rgba(49, 48, 48, 0.35);
+}
+
+#txtChatInput {
+  background: #e7e7e7;
+  border: 1px solid rgba(109, 106, 106, 0.35) !important;
+  color: #313030;
+}
+
+input:focus-visible, textarea:focus-visible {
+  outline: 1px solid rgba(49, 48, 48, 0.55);
+}
+
+/* CUSTOM BOX */
+.box {
+  background-color: #fff;
+  border: 1px solid rgba(109, 106, 106, 0.35);
+  border-radius: 2.5rem;
+}
+.box-header {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-bottom: 1px solid rgba(109, 106, 106, 0.35);
+  border-radius: 2.5rem 2.5rem 0 0;
+  color: #6d6a6a;
+  font-family: "Lora", serif;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+.box-content {
+  padding: 0.75rem;
+  overflow: auto;
+}
+.box-large {
+  height: 300px;
+  margin-bottom: 0.75rem;
+}
+.box-large .box-header {
+  font-size: 2rem;
+}
+.box-large .box-content {
+  height: calc(100% - 5.5rem);
+}
+.box-small {
+  height: 145px;
+}
+.box-small:first-child {
+  margin-bottom: 10px;
+}
+.box-small:nth-child(2) {
+  margin-top: 10px;
+  margin-bottom: 0.75rem;
+}
+.box-small .box-header {
+  font-size: 1.75rem;
+}
+.box-small .box-content {
+  height: calc(100% - 5rem);
+  padding: 0.5rem;
+}
+
+/* TABLE STYLING */
+.table {
+  background-color: #fff;
+  border: 0;
+  border-radius: 2.5rem;
+  box-shadow: 0px 0px 0px 1px rgba(109, 106, 106, 0.35);
+}
+.table .top {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-bottom: 0;
+  border-radius: 2.5rem 2.5rem 0 0;
+  color: #6d6a6a;
+  font-family: "Lora", serif;
+}
+.table .inner-table .left {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-right: 1px dotted rgba(109, 106, 106, 0.35);
+  color: #6d6a6a;
+}
+.table .inner-table .right {
+  background-color: #e7e7e7;
+  color: rgba(49, 48, 48, 0.75);
+}
+.table .bottom {
+  background: linear-gradient(to bottom, #fff 0%, #e7e7e7 100%);
+  border-radius: 0 0 2.5rem 2.5rem;
+}
+.table .bottom a {
+  text-decoration: none !important;
+}
+.table td.left {
+  background-color: #e7e7e7;
+}
+
+/* PRIDE BOX */
+#about tr.right {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  /* i probably could've done this with :has() but whatever i wrote it with :not() and it works */
+}
+#about tr.right td:not(.right):not([width="3"]) {
+  width: unset !important;
+}
+
+#lion_image {
+  position: relative;
+  /* steam avatar frame */
+}
+#lion_image::before {
+  content: "";
+  background-image: url("https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/1543030/3a56c45814a253916ae2e942c3b8a008f6ac7e45.png");
+  background-size: contain;
+  filter: grayscale(100%);
+  opacity: 35%;
+  pointer-events: none;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: 3;
+}
+#lion_image div {
+  border-radius: 2.5rem;
+}
+
+/* PLAYER BOX */
+#player tr.right {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+#player tr.right .h3 {
+  color: #6d6a6a;
+  font-family: "Fondamento", handwriting;
+}
+#player tr.right img {
+  border-radius: 2.5rem;
+  filter: grayscale(75%);
+}
+#player tr.right .right[style="text-align: right; width: 150px;"] {
+  width: unset !important;
+}
+#player tr.right .xlarge {
+  font-size: 1.25em;
+}
+
+#player .right_odd {
+  background: linear-gradient(to bottom, #fff 0%, #e7e7e7 100%);
+  border-radius: 0 0 2.5rem 2.5rem;
+}
+#player .right_odd.text-right {
+  display: none;
+}
+
+/* CAVES & MOUNDS */
+.cave-grid, .mound-grid {
+  background-color: #e7e7e7;
+  border: 0;
+  border-radius: 2.5rem;
+}
+
+.mound-grid img {
+  border-radius: 2.5rem 2.5rem 0 0;
+}
+
+.col-md-4.col-xs-6.center, .col-md-4.col-xs-6.center a, .col-md-3.col-xs-4.center a {
+  transition: color 350ms ease;
+}
+.col-md-4.col-xs-6.center img, .col-md-4.col-xs-6.center a img, .col-md-3.col-xs-4.center a img {
+  filter: grayscale(75%);
+  transition: filter 350ms ease;
+}
+.col-md-4.col-xs-6.center:hover img, .col-md-4.col-xs-6.center a:hover img, .col-md-3.col-xs-4.center a:hover img {
+  filter: grayscale(0%);
+}
+
+/* TRADITIONAL CAVE DISPLAY */
+#pride th {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-radius: 2.5rem 2.5rem 0 0;
+}
+#pride .left.b {
+  background-color: #e7e7e7;
+}
+#pride .right_odd {
+  background-color: rgba(231, 231, 231, 0.55);
+}
+#pride img {
+  filter: grayscale(75%);
+}
+#pride tr:last-child .right_odd:first-child {
+  border-radius: 0 0 0 2.5rem;
+}
+#pride tr:last-child .right_odd:last-child {
+  border-radius: 0 0 2.5rem 0;
+}
+#pride tr:last-child .right:first-child {
+  border-radius: 0 0 0 2.5rem;
+}
+#pride tr:last-child .right:last-child {
+  border-radius: 0 0 2.5rem 0;
+}
+
+/* SPARRING BOX */
+#sparring th {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-radius: 2.5rem 2.5rem 0 0;
+  color: #6d6a6a;
+}
+#sparring .right_odd {
+  background-color: #e7e7e7;
+  border-radius: 0 0 2.5rem 0;
+}
+
+/* FEED ALL/PLAY ALL BOXES */
+.col-sm-6.col-xs-12 .feature {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border: 0;
+  border-radius: 2.5rem;
+}
+.col-sm-6.col-xs-12 .feature h3 {
+  color: #917588;
+}
+
+/* PVP BOX */
+#attack th {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-radius: 2.5rem 2.5rem 0 0;
+  color: #6d6a6a;
+}
+
+/* CLAN IMAGES */
+#clans img {
+  border-radius: 2.5rem;
+  filter: grayscale(75%);
+}
+
+/* BOTTOM BOXES */
+.dynastylist .left, a .col-md-3 .left {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-radius: 2.5rem;
+}
+.dynastylist .left img, a .col-md-3 .left img {
+  border-radius: 2.5rem;
+  filter: grayscale(75%);
+}
+
+/* ACCOUNT & SETTINGS BOXES */
+.table[width="500"]:not(#attack, #pride) th {
+  background: #e7e7e7 url("https://liwoyadan.github.io/liodenryouta/src/images/toptal_greyfloral.webp") repeat center center;
+  border-radius: 2.5rem;
+  color: #6d6a6a;
+}
+
+#editdetailspanel, #accountoptionspanel, #changepasswordpanel {
+  margin-top: 0.5rem;
+}
+
+#editdetailspanel tr:first-child .left.b {
+  border-radius: 2.5rem 0 0 0;
+}
+
+#accountoptionspanel tr:first-child .left {
+  border-radius: 2.5rem 2.5rem 0 0;
+}
+#accountoptionspanel .item {
+  background-color: #e7e7e7;
+  border: 1px solid rgba(109, 106, 106, 0.35);
+  border-radius: 1.5rem 1.5rem 2.5rem 2.5rem;
+}
+#accountoptionspanel .item-header {
+  background-color: #6d6a6a;
+  border-radius: 1.5rem 1.5rem 0 0;
+  color: #fff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#changepasswordpanel tr:first-child .left.b {
+  border-radius: 2.5rem 0 0 0;
+}
+
+.slider {
+  background-color: #6d6a6a !important;
+}
+.slider::before {
+  background-color: #fff !important;
+}
+
+input:checked + .slider {
+  background-color: #9b9e72 !important;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #9b9e72 !important;
+}
+
+/* FOOTER */
+.footer ul.bottomlinks {
+  display: flex;
+  justify-content: center;
+  width: 100% !important;
+}
+.footer a:link, .footer a:visited, .footer a:active {
+  border-bottom: 1px solid #917588;
+  text-shadow: none !important;
+}
+
+/* CREDIT */
+body::before {
+  content: "CSS by #276513";
+  background-color: #e7e7e7;
+  border: 1px solid rgba(109, 106, 106, 0.35);
+  border-radius: 2.5rem;
+  color: rgba(49, 48, 48, 0.75);
+  display: block;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  position: fixed;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 5;
+}
+
+.nolayout body::before {
+  content: none;
+}
+
+/*# sourceMappingURL=lioden_test.css.map */

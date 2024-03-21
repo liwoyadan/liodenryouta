@@ -1,0 +1,862 @@
+/** CUSTOM FOR #368410 by Ryouta#276513 **/
+
+/* FONT IMPORTS */
+@import url('https://fonts.bunny.net/css?family=fondamento:400,400i|lora:500,500i|martel:400');
+$fondamento: 'Fondamento', handwriting;
+$lora: 'Lora', serif;
+$martel: 'Martel', serif;
+
+/* VARIABLES */
+
+$primary: #6d6a6a;
+$secondary: #c2a897;
+$success: #9b9e72;
+$warning: #bd9259;
+$danger: #a15c4f;
+$info: #7c898b;
+
+$text: #313030;
+$link: #917588;
+$white: #e7e7e7;
+$pure-white: #fff;
+
+$floral-bg: url('https://www.toptal.com/designers/subtlepatterns/uploads/greyfloral.png');
+$check-bg: url('https://www.toptal.com/designers/subtlepatterns/uploads/checkerboard-cross.png');
+
+$roundness: 2.5rem;
+
+/* BODY */
+body {
+    background: $white $check-bg repeat center center;
+    color: $text;
+    font-family: $martel;
+}
+
+/* SELECTION */
+::selection {
+    background: $primary;
+    color: lighten($primary, 25%);
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: darken($primary, 10%);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darken($primary, 20%);
+}
+
+/* LAYOUT */
+.topbar {
+    background: $white $floral-bg repeat center center;
+    border-radius: 0 0 $roundness $roundness;
+    box-shadow: 0px 1px 7px 2px rgba($primary, 0.35);
+    color: $text;
+
+    .welcomeback > a, .toplinks > li > a {
+        color: $link!important;
+
+        &:hover {
+            color: darken($link, 15%)!important;
+        }
+    }
+
+    img {
+        filter: grayscale(75%);
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 1rem;
+    }
+}
+
+.container.main {
+    background-color: rgba($pure-white, 0.55);
+    backdrop-filter: blur(2px);
+    border-radius: $roundness;
+    box-shadow: 4px 4px 7px rgba($primary, 0.35),
+                -4px -4px 7px $pure-white;
+}
+
+.navbar {
+    background: $white $floral-bg repeat center center;
+    border-top: 1px solid rgba($primary, 0.15);
+    border-bottom: 1px solid rgba($primary, 0.15);
+    border-radius: $roundness $roundness 0 0!important;
+    min-height: 0;
+
+    /* LOGO */
+    .navbar-brand>img {
+        filter: grayscale(100%) brightness(1.5);
+    }
+
+    li {
+        background-color: transparent;
+        position: relative;
+
+        &::before {
+            content: '';
+            background-color: rgba($link, 0.55);
+            height: 1px;
+            width: 0%;
+            transition: width 350ms ease;
+
+            position: absolute;
+            left: 20%;
+            bottom: 1rem;
+        }
+
+        &:hover::before {
+            width: 60%;
+        }
+
+        a {
+            background-color: $primary;
+            background-clip: text;
+            color: transparent!important;
+            font-family: $lora;
+            font-weight: bold;
+            text-shadow: 0px 3px 3px rgba($pure-white, 0.55);
+            transition: all 350ms ease;
+
+            &:hover {
+                background-color: $link!important;
+                background-clip: text!important;
+                color: transparent!important;
+            }
+        }
+    }
+
+    &-toggle {
+        border-color: rgba($primary, 0.35)!important;
+    }
+
+    .navbar-toggle:hover, .navbar-toggle:focus {
+        background: rgba($primary, 0.15)!important;
+    }
+
+    .navbar-collapse {
+        border-color: rgba($primary, 0.35);
+    }
+}
+
+/* CONTENT ROW */
+.main .row:nth-child(2) {
+    border-left: 1px solid rgba($primary, 0.1);
+    border-right: 1px solid rgba($primary, 0.1);
+
+    @media (min-width: 768px) {
+        border-radius: 0 0 $roundness $roundness;
+    }
+}
+
+/* LEFT COLUMN */
+.col-md-9 {
+    background-color: transparent;
+}
+
+/* RIGHT COLUMN */
+.sidebar {
+    background: linear-gradient(to bottom, $pure-white 0%, transparent 100%);
+}
+
+/* HEADINGS */
+h1 {
+    background-clip: text;
+    background-color: $primary;
+    color: transparent;
+    font-family: $fondamento;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 0px 3px 3px rgba($pure-white, 0.55);
+}
+
+h2 {
+    color: $primary;
+    font-family: $fondamento;
+}
+
+h3 {
+    color: $primary!important;
+    font-family: $lora;
+}
+
+h4 {
+    color: $primary!important;
+    font-family: $lora;
+}
+
+/* LINKS */
+a, a:link, a:visited {
+    color: $link!important;
+
+    &:hover {
+        color: darken($link, 15%)!important;
+    }
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+    background-color: $white;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+
+    .active {
+        color: $text;
+    }
+}
+
+/* ALERTS */
+$alerts: ("success": $success, "warning": $warning, "danger": $danger);
+
+.alert {
+    @each $alert, $clr in $alerts {
+        &.alert-#{$alert} {
+            background-color: rgba($clr, 0.35);
+            border: 0;
+            border-radius: 1rem;
+            box-shadow: 0px 1px 7px 1px rgba($clr, 0.2);
+            color: darken($clr, 15%);
+
+            a {
+                color: darken($clr, 25%)!important;
+                font-weight: bold;
+
+                &:hover {
+                    color: darken($clr, 15%)!important;
+                }
+            }
+        }
+    }
+}
+
+/* INPUT BUTTONS */ 
+input[type="submit"], input[name="togglechat"], button[type="submit"], #btnChatSend, .button.gold {
+    background: rgba($primary, 0.75)!important;
+    border: 1px solid rgba($primary, 0.35)!important;
+    border-radius: 1rem;
+    box-shadow: none!important;
+    color: $pure-white!important;
+    text-shadow: none!important;
+    transition: all 350ms ease;
+
+    &:hover {
+        background: rgba($primary, 0.55)!important;
+        border: 1px solid rgba($primary, 0.35);
+        border-radius: 1rem;
+        text-shadow: none;
+    }
+}
+
+/* SELECT DROPDOWNS */
+select {
+    background-color: rgba($primary, 0.75);
+    border: 0px;
+    border-radius: $roundness;
+    color: $pure-white!important;
+
+    option {
+        color: rgba($pure-white, 0.75);
+    }
+}
+
+/* RIGHT COLUMN CONTENT */
+.panel {
+    background: transparent!important;
+    box-shadow: none!important;
+    border: 0!important;
+    color: $text!important;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        background: $white $floral-bg repeat center center;
+        border-radius: $roundness;
+        opacity: 0.65;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    img {
+        filter: grayscale(75%);
+    }
+}
+
+/* STAT BARS */
+.progress {
+    background: darken($white, 5%);
+
+    .progress-bar {
+        /* IMPRESSION */
+        background:rgba($info, 0.35);
+
+        /* ENERGY */
+        &.progress-bar-warning {
+            background: rgba($warning, 0.35);
+        }
+
+        /* HUNGER */
+        &.progress-bar-danger {
+            background: rgba($danger, 0.35);
+        }
+
+        /* EXP */
+        &.progress-bar-success {
+            background: rgba($success, 0.35);
+        }
+    }
+
+    div {
+        color: $text;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding-top: 2px;
+    }
+}
+
+/* COMMENT BOX */
+
+#commentBox {
+    background-color: rgba($pure-white, 0.35);
+    border: 1px solid rgba($primary, 0.35)!important;
+    color: rgba($text, 0.75);
+
+    .commentTag {
+        filter: grayscale(75%);
+    }
+
+    .bad {
+        background: rgba($primary, 0.75)!important;
+        border: 1px solid rgba($primary, 0.35)!important;
+        border-radius: 1rem;
+        box-shadow: none!important;
+        color: $pure-white!important;
+        padding-top: 0.5rem!important;
+        text-shadow: none!important;
+        transition: all 350ms ease;
+
+        &:hover {
+            background: rgba($primary, 0.55)!important;
+            border: 1px solid rgba($primary, 0.35);
+            border-radius: 1rem;
+            text-shadow: none;
+        }
+    }
+}
+
+.comment:nth-child(even) {
+    background-color: $white!important;
+    color: $text;
+}
+
+#comment {
+    border: 1px solid rgba($primary, 0.35)!important;
+}
+
+/* CHATBOX */
+.nolayout body {
+    background-color: transparent!important;
+}
+
+.s-chat-message {
+    a {
+        color: $link!important;
+
+        &:hover {
+            color: darken($link, 15%)!important;
+        }
+    }
+
+    &:nth-child(even) {
+        background: $white;
+        border: 0;
+        border-left: 6px solid transparent;
+    }
+
+    &:nth-child(odd) {
+        background: $pure-white;
+        border: 0;
+        border-left: 6px solid transparent;
+    }
+
+    &__pinned {
+        background: $primary!important;
+        color: $pure-white!important;
+
+        a {
+            color: lighten($link, 15%)!important;
+
+            &:hover {
+                color: $link!important;
+            }
+        }
+    }
+
+    &__mod {
+        background: rgba($success, 0.35)!important;
+        border: 0;
+        border-left: 6px solid transparent;
+        color: darken($success, 35%);
+    }
+
+    &_timestamp {
+        color: rgba($text, 0.45);
+    }
+
+    &_claim {
+        background-color: $link;
+        border-bottom: 0;
+        color: $white;
+    }
+
+    &.hasContext {
+        background-color: $white!important;
+        border-left-color: darken($primary, 5%)!important;
+    }    
+}
+
+#chatMessagePinned.s-chat-message__pinned {
+    border-bottom-color: $primary!important;
+}
+
+#modalClaimList {
+    background-color: $white;
+    border: 0;
+
+    h3 {
+        background-color: $link;
+        color: $white!important;
+    }
+}
+
+#label_currentChannel, #fraChatChannelMenu {
+    background-color: $primary!important;
+    border: 1px solid $white!important;
+    box-shadow: none;
+    color: $pure-white;
+
+    .channelSwitcher{
+        color: $text!important;
+
+        &:hover {
+            background-color: lighten($primary, 10%)!important;
+        }
+
+        &.active {
+            background-color: $link!important;
+            color: $white!important;
+        }
+    }
+}
+
+#fraChatSettings, #btnLoadNewMessages, .s-chat-message_menu {
+    filter: opacity(0.65);
+
+    &:hover {
+        filter: opacity(0.85);
+    }
+}
+
+#txtChatContainer #lblCharacterCounter {
+    color: $text;
+}
+
+#chatMessageContainer {
+    border: 1px solid rgba($text, 0.35);
+}
+
+#txtChatInput {
+    background: $white;
+    border: 1px solid rgba($primary, 0.35)!important;
+    color: $text;
+}
+
+input:focus-visible, textarea:focus-visible {
+    outline: 1px solid rgba($text, 0.55);
+}
+
+/* CUSTOM BOX */
+.box {
+    background-color: $pure-white;
+    border: 1px solid rgba($primary, 0.35);
+    border-radius: $roundness;
+
+    &-header {
+        background: $white $floral-bg repeat center center;
+        border-bottom: 1px solid rgba($primary, 0.35);
+        border-radius: $roundness $roundness 0 0;
+        color: $primary;
+        font-family: $lora;
+        padding: 0.75rem 1rem;
+        text-align: left;
+    }
+
+    &-content {
+        padding: 0.75rem;
+        overflow: auto;
+    }
+
+    &-large {
+        height: 300px;
+        margin-bottom: 0.75rem;
+
+        .box-header {
+            font-size: 2rem;
+        }
+
+        .box-content {
+            height: calc(100% - 5.5rem);
+        }
+    }
+
+    &-small {
+        height: 145px;
+
+        &:first-child {
+            margin-bottom: 10px;
+        }
+
+        &:nth-child(2) {
+            margin-top: 10px;
+            margin-bottom: 0.75rem;
+        }
+
+        .box-header {
+            font-size: 1.75rem;
+        }
+
+        .box-content {
+            height: calc(100% - 5rem);
+            padding: 0.5rem;
+        }
+    }
+}
+
+/* TABLE STYLING */
+.table {
+    background-color: $pure-white;
+    border: 0;
+    border-radius: $roundness;
+    box-shadow: 0px 0px 0px 1px rgba($primary, 0.35);
+
+    .top {
+        background: $white $floral-bg repeat center center;
+        border-bottom: 0;
+        border-radius: $roundness $roundness 0 0;
+        color: $primary;
+        font-family: $lora;
+    }
+
+    .inner-table {
+        .left {
+            background: $white $floral-bg repeat center center;
+            border-right: 1px dotted rgba($primary, 0.35);
+            color: $primary;
+        }
+
+        .right {
+            background-color: $white;
+            color: rgba($text, 0.75);
+        }
+    }
+
+    .bottom {
+        background: linear-gradient(to bottom, $pure-white 0%, $white 100%);
+        border-radius: 0 0 $roundness $roundness;
+
+        a {
+            text-decoration: none!important;
+        }
+    }
+
+    td.left {
+        background-color: $white;
+    }
+}
+
+/* PRIDE BOX */
+#about tr.right {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+
+    /* i probably could've done this with :has() but whatever i wrote it with :not() and it works */
+    td:not(.right):not([width="3"]) {
+        width: unset !important;
+    }
+}
+
+#lion_image {
+    position: relative;
+
+    /* steam avatar frame */
+    &::before {
+        content: '';
+        background-image: url('https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/1543030/3a56c45814a253916ae2e942c3b8a008f6ac7e45.png');
+        background-size: contain;
+        filter: grayscale(100%);
+        opacity: 35%;
+        pointer-events: none;
+
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        z-index: 3;
+    }
+
+    div {
+        border-radius: $roundness;
+    }
+}
+
+/* PLAYER BOX */
+#player tr.right {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+
+    .h3 {
+        color: $primary;
+        font-family: $fondamento;
+    }
+
+    img {
+        border-radius: $roundness;
+        filter: grayscale(75%);
+    }
+
+    .right[style="text-align: right; width: 150px;"] {
+        width: unset!important;
+    }
+
+    .xlarge {
+        font-size: 1.25em;
+    }
+}
+
+#player .right_odd {
+    background: linear-gradient(to bottom, $pure-white 0%, $white 100%);
+    border-radius: 0 0 $roundness $roundness;
+
+    &.text-right {
+        display: none;
+    }
+}
+
+/* CAVES & MOUNDS */
+.cave-grid, .mound-grid {
+    background-color: $white;
+    border: 0;
+    border-radius: $roundness;
+}
+
+.mound-grid img {
+    border-radius: $roundness $roundness 0 0;
+}
+
+.col-md-4.col-xs-6.center, .col-md-4.col-xs-6.center a, .col-md-3.col-xs-4.center a {
+    transition: color 350ms ease;
+
+    img {
+        filter: grayscale(75%);
+        transition: filter 350ms ease;
+    }
+
+    &:hover {
+        img {
+            filter: grayscale(0%);
+        }
+    }
+}
+
+/* TRADITIONAL CAVE DISPLAY */
+#pride {
+    th {
+        background: $white $floral-bg repeat center center;
+        border-radius: $roundness $roundness 0 0;
+    }
+
+    .left.b {
+        background-color: $white;
+    }
+
+    .right_odd {
+        background-color: rgba($white, 0.55);
+    }
+
+    img {
+        filter: grayscale(75%);
+    }
+
+    tr:last-child .right_odd:first-child {
+        border-radius: 0 0 0 $roundness;
+    }
+
+    tr:last-child .right_odd:last-child {
+        border-radius: 0 0 $roundness 0;
+    }
+
+    tr:last-child .right:first-child {
+        border-radius: 0 0 0 $roundness;
+    }
+
+    tr:last-child .right:last-child {
+        border-radius: 0 0 $roundness 0;
+    }
+}
+
+/* SPARRING BOX */
+#sparring {
+    th {
+        background: $white $floral-bg repeat center center;
+        border-radius: $roundness $roundness 0 0;
+        color: $primary;
+    }
+
+    .right_odd {
+        background-color: $white;
+        border-radius: 0 0 $roundness 0;
+    }
+}
+
+/* FEED ALL/PLAY ALL BOXES */
+.col-sm-6.col-xs-12 .feature {
+    background: $white $floral-bg repeat center center;
+    border: 0;
+    border-radius: $roundness;
+
+    h3 {
+        color: $link;
+    }
+}
+
+/* PVP BOX */
+#attack {
+    th {
+        background: $white $floral-bg repeat center center;
+        border-radius: $roundness $roundness 0 0;
+        color: $primary;
+    }
+}
+
+/* CLAN IMAGES */
+#clans img {
+    border-radius: $roundness;
+    filter: grayscale(75%);
+}
+
+/* BOTTOM BOXES */
+.dynastylist .left, a .col-md-3 .left {
+    background: $white $floral-bg repeat center center;
+    border-radius: $roundness;
+
+    img {
+        border-radius: $roundness;
+        filter: grayscale(75%);
+    }
+}
+
+/* ACCOUNT & SETTINGS BOXES */
+.table[width="500"]:not(#attack, #pride) th {
+    background: $white $floral-bg repeat center center;
+    border-radius: $roundness;
+    color: $primary;
+}
+
+#editdetailspanel, #accountoptionspanel, #changepasswordpanel {
+    margin-top: 0.5rem;
+}
+
+#editdetailspanel tr:first-child .left.b {
+    border-radius: $roundness 0 0 0;
+}
+
+#accountoptionspanel {
+    tr:first-child .left {
+        border-radius: $roundness $roundness 0 0;
+    }
+
+    .item {
+        background-color: $white;
+        border: 1px solid rgba($primary, 0.35);
+        border-radius: 1.5rem 1.5rem $roundness $roundness;
+    }
+
+    .item-header {
+        background-color: $primary;
+        border-radius: 1.5rem 1.5rem 0 0;
+        color: $pure-white;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+
+#changepasswordpanel tr:first-child .left.b {
+    border-radius: $roundness 0 0 0;
+}
+
+.slider {
+    background-color: $primary!important;
+
+    &::before {
+        background-color: $pure-white!important;
+    }
+}
+
+input:checked+.slider {
+    background-color: $success!important;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px $success!important;
+}
+
+/* FOOTER */
+.footer {
+    ul.bottomlinks {
+        display: flex;
+        justify-content: center;
+        width: 100%!important;
+    }
+
+    a:link, a:visited, a:active {
+        border-bottom: 1px solid $link;
+        text-shadow: none!important;
+    }
+}
+
+/* CREDIT */
+body::before {
+    content: 'CSS by #276513';
+    background-color: $white;
+    border: 1px solid rgba($primary, 0.35);
+    border-radius: $roundness;
+    color: rgba($text, 0.75);
+    display: block;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    position: fixed;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    z-index: 5;
+}
+
+.nolayout body::before {
+    content: none;
+}
